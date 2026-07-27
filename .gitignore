@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Editors and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Runtime data and logs
+*.log
+backend/database.db
+backend/images/*
+backend/outputs/*
+backend/analysis/*
+
+# Model weights must be distributed separately (usually with Git LFS/object storage)
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+
+# Frontend dependencies and build products
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+# Cesium assets are copied from node_modules by vite-plugin-static-copy during dev/build.
+frontend/public/cesium/

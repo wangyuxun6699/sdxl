@@ -1,0 +1,52 @@
+:root {
+  --ink-900: #1b2328;
+  --ink-700: #3d474e;
+  --ink-600: #56636c;
+  --ink-500: #7c868b;
+  --accent-700: #9a4a1b;
+  --accent-500: #d6823d;
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--ink-900);
+  background: #f3ecdf;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
