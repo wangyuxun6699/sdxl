@@ -6,24 +6,11 @@ export default defineConfig({
   plugins: [
     vue(),
     viteStaticCopy({
-      targets: [
-        {
-          src: "node_modules/cesium/Build/Cesium/Assets/**/*",
-          dest: "cesium/Assets",
-        },
-        {
-          src: "node_modules/cesium/Build/Cesium/ThirdParty/**/*",
-          dest: "cesium/ThirdParty",
-        },
-        {
-          src: "node_modules/cesium/Build/Cesium/Widgets/**/*",
-          dest: "cesium/Widgets",
-        },
-        {
-          src: "node_modules/cesium/Build/Cesium/Workers/**/*",
-          dest: "cesium/Workers",
-        },
-      ],
+      targets: ['Assets', 'ThirdParty', 'Widgets', 'Workers'].map((directory) => ({
+        src: `node_modules/cesium/Build/Cesium/${directory}`,
+        dest: 'cesium',
+        rename: { stripBase: 4 },
+      })),
     }),
   ],
   define: {

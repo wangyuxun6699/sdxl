@@ -1,0 +1,10 @@
+{
+  "mode": "palette",
+  "background_rgb": "#FFFFFF",
+  "palette_delta": 10.0,
+  "palette_margin": 2.0,
+  "colors": [
+    {"name": "example_light", "rgb": "#50C878", "height_m": null},
+    {"name": "example_dark", "rgb": "#2A683E", "height_m": null}
+  ]
+}

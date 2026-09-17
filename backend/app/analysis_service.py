@@ -12,6 +12,7 @@ from .schemas import AnalysisRequest
 from .serializers import analysis_summary_path
 from .settings import ANALYSIS_DIR
 from ..scripts.spatial_analysis import run_spatial_analysis
+from ..postprocessing.scene import scene_fingerprint
 
 
 def analysis_result_dir(result_id: str) -> Path:
@@ -31,7 +32,7 @@ def ensure_spatial_analysis(
 
     # GET 优先复用磁盘摘要；POST(force=True) 才按新的日照/风向参数重算并覆盖缓存。
     cached = None if force else load_analysis_summary(result_id)
-    if cached is not None:
+    if cached is not None and (cached.get("postprocess") or {}).get("source_fingerprint") == scene_fingerprint(image_path):
         return cached
 
     normalized = normalize_analysis_request(analysis_request)

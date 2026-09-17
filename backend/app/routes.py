@@ -27,12 +27,13 @@ router = APIRouter()
 
 
 @router.get("/health")
-async def health() -> dict[str, str]:
-    return {"status": "ok"}
+def health() -> dict[str, Any]:
+    from .capabilities import capabilities
+    return capabilities()
 
 
 @router.post("/chat")
-async def chat(request: ChatRequest) -> dict[str, Any]:
+def chat(request: ChatRequest) -> dict[str, Any]:
     prompt = request.message.strip()
     if not prompt:
         raise HTTPException(status_code=400, detail="消息不能为空")
@@ -64,6 +65,9 @@ async def chat(request: ChatRequest) -> dict[str, Any]:
     except FileNotFoundError as exc:
         log_step("ERROR", str(exc))
         raise HTTPException(status_code=500, detail=str(exc)) from exc
+    except (ValueError, OSError) as exc:
+        log_step("ERROR", f"Image processing pipeline failed: {exc}")
+        raise HTTPException(status_code=500, detail=f"图像处理未完成：{exc}") from exc
 
     insert_result(
         result_id=request_id,
@@ -100,32 +104,32 @@ async def chat(request: ChatRequest) -> dict[str, Any]:
 
 
 @router.get("/results")
-async def get_results() -> dict[str, list[dict[str, Any]]]:
+def get_results() -> dict[str, list[dict[str, Any]]]:
     return {"items": list_results()}
 
 
 @router.get("/results/{result_id}")
-async def get_result(result_id: str) -> dict[str, Any]:
+def get_result(result_id: str) -> dict[str, Any]:
     return fetch_result(result_id)
 
 
 @router.get("/results/{result_id}/analysis")
-async def get_result_analysis(result_id: str) -> dict[str, Any]:
+def get_result_analysis(result_id: str) -> dict[str, Any]:
     return ensure_spatial_analysis(result_id)
 
 
 @router.post("/results/{result_id}/analysis")
-async def run_result_analysis(result_id: str, request: AnalysisRequest) -> dict[str, Any]:
+def run_result_analysis(result_id: str, request: AnalysisRequest) -> dict[str, Any]:
     return ensure_spatial_analysis(result_id, force=True, analysis_request=request)
 
 
 @router.patch("/results/{result_id}")
-async def patch_result(result_id: str, request: ResultUpdateRequest) -> dict[str, Any]:
+def patch_result(result_id: str, request: ResultUpdateRequest) -> dict[str, Any]:
     return update_result(result_id, title=request.title, notes=request.notes)
 
 
 @router.delete("/results/{result_id}")
-async def delete_result(result_id: str) -> dict[str, str]:
+def delete_result(result_id: str) -> dict[str, str]:
     existing = fetch_result(result_id)
     delete_result_record(result_id)
 
@@ -135,11 +139,17 @@ async def delete_result(result_id: str) -> dict[str, str]:
         (existing["html_url"], OUTPUTS_DIR),
     ):
         local_path = base_dir / Path(mount_url or "").name
-        if local_path.exists():
+        if local_path.is_file():
             local_path.unlink()
 
     result_analysis_dir = analysis_result_dir(result_id)
     if result_analysis_dir.exists():
         shutil.rmtree(result_analysis_dir)
+
+    image_name = Path(existing["image_url"] or "").stem
+    if image_name:
+        bundle_dir = IMAGES_DIR / f"{image_name}_postprocess"
+        if bundle_dir.is_dir():
+            shutil.rmtree(bundle_dir)
 
     return {"status": "success", "message": "结果已删除"}

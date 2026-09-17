@@ -1,0 +1,34 @@
+{
+  "pipeline_version": "1.0.0",
+  "source": {
+    "filename": "sample_layouts.png",
+    "sha256": "636c80ab794acdff96e848b0bf9f0af0a49f9a82f61b148ade8e5f001133ef09"
+  },
+  "size": {
+    "width": 1009,
+    "height": 912
+  },
+  "counts": {
+    "components_before": 136,
+    "components_after": 136,
+    "color_regions": 915,
+    "noise_regions_merged": 13,
+    "geometry_changed_px": 387,
+    "changed_px": 398601,
+    "geometry_added_px": 216,
+    "geometry_removed_px": 171,
+    "changed_foreground_px": 33292,
+    "changed_background_px": 365309,
+    "review_px": 26991,
+    "foreground_px": 65167,
+    "known_height_px": 0
+  },
+  "elapsed_seconds": 0.3701,
+  "warnings": [
+    "Color regions are not building instances or ordered height classes.",
+    "Stable false color splits cannot be distinguished from true height parts using RGB alone.",
+    "Uncertain region colors were preserved; inspect review_mask.png.",
+    "Unknown heights are NaN, not zero; no meters are inferred from brightness."
+  ],
+  "height_source": "unknown"
+}

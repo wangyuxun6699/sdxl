@@ -10,36 +10,10 @@ from pathlib import Path
 import cv2
 import numpy as np
 
+from ..postprocessing.scene import load_scene_fields
 
-MAX_HEIGHT = 80.0
+
 VALID_WIND_DIRECTIONS = ("north", "east", "south", "west")
-BUILDING_COLOR_RANGES = {
-    "red": [
-        (np.array([0, 40, 40]), np.array([12, 255, 255])),
-        (np.array([168, 40, 40]), np.array([180, 255, 255])),
-    ],
-    "yellow": [
-        (np.array([15, 40, 40]), np.array([38, 255, 255])),
-    ],
-    "green": [
-        (np.array([35, 40, 40]), np.array([90, 255, 255])),
-    ],
-    "blue": [
-        (np.array([90, 40, 40]), np.array([135, 255, 255])),
-    ],
-}
-COLOR_ALIASES = {
-    "residential": "green",
-    "green": "green",
-    "industrial": "yellow",
-    "yellow": "yellow",
-    "commercial": "blue",
-    "blue": "blue",
-    "public": "red",
-    "red": "red",
-    "auto": "auto",
-    "all": "auto",
-}
 SEASON_SUN_ALTITUDES = {
     "winter": 22.0,
     "spring": 44.0,
@@ -47,100 +21,6 @@ SEASON_SUN_ALTITUDES = {
     "autumn": 38.0,
     "custom": 45.0,
 }
-
-
-def _load_image(image_path: str) -> tuple[np.ndarray, np.ndarray]:
-    img = cv2.imread(image_path, cv2.IMREAD_UNCHANGED)
-    if img is None:
-        raise FileNotFoundError(f"Unable to read image: {image_path}")
-
-    if len(img.shape) == 3 and img.shape[-1] == 4:
-        alpha_channel = img[:, :, 3] / 255.0
-        rgb_channels = img[:, :, :3]
-        white_background = np.ones_like(rgb_channels, dtype=np.uint8) * 255
-        img_bgr = (
-            rgb_channels * alpha_channel[:, :, np.newaxis]
-            + white_background * (1 - alpha_channel[:, :, np.newaxis])
-        ).astype(np.uint8)
-    else:
-        img_bgr = img
-
-    img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
-    return img_bgr, img_rgb
-
-
-def _normalize_target_colors(target_color: str | None = None) -> list[str]:
-    normalized = COLOR_ALIASES.get((target_color or "auto").strip().lower(), "auto")
-    if normalized == "auto":
-        return list(BUILDING_COLOR_RANGES.keys())
-    return [normalized]
-
-
-def _build_colored_building_mask(hsv_image: np.ndarray, target_color: str | None = None) -> np.ndarray:
-    building_mask = np.zeros(hsv_image.shape[:2], dtype=np.uint8)
-    for color_name in _normalize_target_colors(target_color):
-        for lower_bound, upper_bound in BUILDING_COLOR_RANGES[color_name]:
-            building_mask = cv2.bitwise_or(
-                building_mask,
-                cv2.inRange(hsv_image, lower_bound, upper_bound),
-            )
-    return building_mask
-
-
-def _is_line_or_border_artifact(contour: np.ndarray, image_width: int, image_height: int) -> bool:
-    x, y, width, height = cv2.boundingRect(contour)
-    touches_border = (
-        x <= 1
-        or y <= 1
-        or x + width >= image_width - 1
-        or y + height >= image_height - 1
-    )
-    if touches_border and width > image_width * 0.75 and height > image_height * 0.75:
-        return True
-
-    short_side = min(width, height)
-    long_side = max(width, height)
-    return short_side <= 12 and long_side / max(short_side, 1) >= 3
-
-
-def _extract_height_map(
-    img_bgr: np.ndarray,
-    target_color: str | None = None,
-) -> tuple[np.ndarray, np.ndarray]:
-    hsv = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2HSV)
-    v_channel = hsv[:, :, 2]
-    v_smooth = cv2.medianBlur(v_channel, 5)
-
-    # 与 2D→3D 使用同一颜色约定，保证分析对象和预览中的建筑轮廓一致。
-    building_mask = _build_colored_building_mask(hsv, target_color)
-
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
-    cleaned_mask = cv2.morphologyEx(building_mask, cv2.MORPH_OPEN, kernel, iterations=2)
-    cleaned_mask = cv2.morphologyEx(cleaned_mask, cv2.MORPH_CLOSE, kernel, iterations=1)
-
-    contours, _ = cv2.findContours(cleaned_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    height_map = np.zeros_like(v_smooth, dtype=np.float32)
-    usable_building_mask = np.zeros_like(cleaned_mask, dtype=np.uint8)
-
-    for cnt in contours:
-        if cv2.contourArea(cnt) < 50:
-            continue
-        if _is_line_or_border_artifact(cnt, cleaned_mask.shape[1], cleaned_mask.shape[0]):
-            continue
-
-        single_block_mask = np.zeros_like(cleaned_mask)
-        cv2.drawContours(single_block_mask, [cnt], -1, 255, thickness=cv2.FILLED)
-        block_pixels = v_smooth[single_block_mask == 255]
-        if len(block_pixels) == 0:
-            continue
-
-        # 训练约定为“深色高层、浅色低层”，因此亮度与代理高度呈反比。
-        median_v = np.median(block_pixels)
-        block_height = ((255 - median_v) / 255.0) * MAX_HEIGHT
-        height_map[single_block_mask == 255] = block_height
-        usable_building_mask[single_block_mask == 255] = 255
-
-    return height_map, usable_building_mask > 0
 
 
 def _normalize_map(value_map: np.ndarray, valid_mask: np.ndarray | None = None) -> np.ndarray:
@@ -386,8 +266,9 @@ def run_spatial_analysis(
     base_dir = Path(output_dir)
     base_dir.mkdir(parents=True, exist_ok=True)
 
-    img_bgr, img_rgb = _load_image(image_path)
-    height_map, building_mask = _extract_height_map(img_bgr, target_color)
+    # Same full-resolution mask and height policy as the 3D preview.
+    scene = load_scene_fields(image_path)
+    img_rgb, height_map, building_mask = scene.rgb, scene.proxy_height, scene.foreground
 
     # 同一份高度图分别进入日照和多风向通风计算，确保各项指标可以相互对照。
     sunlight_map, sunlight_metrics, sunlight_inputs = _simulate_sunlight(
@@ -442,12 +323,13 @@ def run_spatial_analysis(
     summary = {
         "analysis_type": "proxy-spatial-analysis",
         "assumptions": [
-            "Lighting uses simplified multi-direction shadow casting based on inferred building heights.",
+            "Lighting uses simplified multi-direction shadow casting based on configured or uniform schematic heights.",
             "Sun altitude and season alter shadow length rather than running a physically exact solar engine.",
             "Ventilation uses a 2D directional flow proxy and wake attenuation, not full CFD.",
             "Wind rose values are aggregated from batch directional evaluations for early-stage comparison.",
         ],
-        "warnings": [],
+        "warnings": list(scene.metadata["warnings"]),
+        "postprocess": scene.metadata,
         "inputs": {
             "image_path": image_path,
             "pixel_width": int(img_rgb.shape[1]),

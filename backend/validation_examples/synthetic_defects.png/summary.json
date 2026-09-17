@@ -1,0 +1,33 @@
+{
+  "pipeline_version": "1.0.0",
+  "source": {
+    "filename": "synthetic_defects.png",
+    "sha256": "428db48af10560a8d3eff41cabd2ecb0224b7099e6c8238e4c1b692dfe6f0fca"
+  },
+  "size": {
+    "width": 1024,
+    "height": 1024
+  },
+  "counts": {
+    "components_before": 7,
+    "components_after": 7,
+    "color_regions": 9,
+    "noise_regions_merged": 0,
+    "geometry_changed_px": 3,
+    "changed_px": 59576,
+    "geometry_added_px": 2,
+    "geometry_removed_px": 1,
+    "changed_foreground_px": 59576,
+    "changed_background_px": 0,
+    "review_px": 0,
+    "foreground_px": 258830,
+    "known_height_px": 0
+  },
+  "elapsed_seconds": 0.19,
+  "warnings": [
+    "Color regions are not building instances or ordered height classes.",
+    "Stable false color splits cannot be distinguished from true height parts using RGB alone.",
+    "Unknown heights are NaN, not zero; no meters are inferred from brightness."
+  ],
+  "height_source": "unknown"
+}

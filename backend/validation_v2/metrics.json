@@ -1,0 +1,346 @@
+{
+  "pipeline_version": "2.0.0",
+  "python": "3.12.13",
+  "numpy": "2.3.5",
+  "opencv": "4.14.0",
+  "pillow": "12.3.0",
+  "note": "User PNGs have no ground truth. Counts and changed pixels are not accuracy. CPU timing excludes file I/O.",
+  "images": [
+    {
+      "filename": "107cd38c10f54562999c46668974c472.png",
+      "sha256": "d48b957ede6b4c21c72443d4344dd39a6817ad46946caf5c436d49df72cde7e7",
+      "size": [
+        617,
+        617
+      ],
+      "v1_counts": {
+        "components_before": 18,
+        "components_after": 18,
+        "color_regions": 67,
+        "noise_regions_merged": 4,
+        "geometry_changed_px": 42,
+        "changed_px": 336394,
+        "geometry_added_px": 33,
+        "geometry_removed_px": 9,
+        "changed_foreground_px": 20928,
+        "changed_background_px": 315466,
+        "review_px": 3604,
+        "foreground_px": 24877,
+        "known_height_px": 0
+      },
+      "v2_counts": {
+        "components_before": 18,
+        "components_after": 17,
+        "fragments_removed": 1,
+        "footprints_regularized": 16,
+        "geometry_review_px": 0,
+        "color_regions": 17,
+        "noise_regions_merged": 13,
+        "shared_boundaries_regularized": 0,
+        "geometry_changed_px": 1854,
+        "changed_px": 339973,
+        "geometry_added_px": 1053,
+        "geometry_removed_px": 801,
+        "changed_foreground_px": 25438,
+        "changed_background_px": 314535,
+        "review_px": 0,
+        "foreground_px": 25105,
+        "known_height_px": 0
+      },
+      "core_seconds": 0.2648,
+      "cleaned_pixel_sha256": "2ac4db6a007a3b59eca18f3ecf37e12400ff21261421dcc59e118962977c2fa6"
+    },
+    {
+      "filename": "364bd34335b2319101f7d3db75dfbdb0.png",
+      "sha256": "9ea0ca15a601ed6382c6e1abf4cf2dbac539dd38c1179cb725c9f672802885a5",
+      "size": [
+        617,
+        617
+      ],
+      "v1_counts": {
+        "components_before": 12,
+        "components_after": 12,
+        "color_regions": 267,
+        "noise_regions_merged": 6,
+        "geometry_changed_px": 26,
+        "changed_px": 364648,
+        "geometry_added_px": 10,
+        "geometry_removed_px": 16,
+        "changed_foreground_px": 26686,
+        "changed_background_px": 337962,
+        "review_px": 747,
+        "foreground_px": 28726,
+        "known_height_px": 0
+      },
+      "v2_counts": {
+        "components_before": 12,
+        "components_after": 11,
+        "fragments_removed": 1,
+        "footprints_regularized": 9,
+        "geometry_review_px": 0,
+        "color_regions": 198,
+        "noise_regions_merged": 15,
+        "shared_boundaries_regularized": 1,
+        "geometry_changed_px": 713,
+        "changed_px": 362753,
+        "geometry_added_px": 354,
+        "geometry_removed_px": 359,
+        "changed_foreground_px": 25124,
+        "changed_background_px": 337629,
+        "review_px": 2713,
+        "foreground_px": 28727,
+        "known_height_px": 0
+      },
+      "core_seconds": 0.2468,
+      "cleaned_pixel_sha256": "88ff71cfb96e67d04d2b6510324d04bf876ee0bd1eb7a30f48cdf0992b6ac404"
+    },
+    {
+      "filename": "4a9ef8318b0252635958784916e93ddb.png",
+      "sha256": "491fddb8a93769675767f990da23d41fe60122fdec895740ab28bdc886e270a1",
+      "size": [
+        617,
+        617
+      ],
+      "v1_counts": {
+        "components_before": 26,
+        "components_after": 26,
+        "color_regions": 84,
+        "noise_regions_merged": 6,
+        "geometry_changed_px": 73,
+        "changed_px": 377139,
+        "geometry_added_px": 49,
+        "geometry_removed_px": 24,
+        "changed_foreground_px": 19775,
+        "changed_background_px": 357364,
+        "review_px": 1139,
+        "foreground_px": 21357,
+        "known_height_px": 0
+      },
+      "v2_counts": {
+        "components_before": 26,
+        "components_after": 25,
+        "fragments_removed": 1,
+        "footprints_regularized": 24,
+        "geometry_review_px": 0,
+        "color_regions": 25,
+        "noise_regions_merged": 7,
+        "shared_boundaries_regularized": 0,
+        "geometry_changed_px": 655,
+        "changed_px": 378321,
+        "geometry_added_px": 268,
+        "geometry_removed_px": 387,
+        "changed_foreground_px": 21176,
+        "changed_background_px": 357145,
+        "review_px": 0,
+        "foreground_px": 21213,
+        "known_height_px": 0
+      },
+      "core_seconds": 0.2474,
+      "cleaned_pixel_sha256": "62662771c9ef0c4c2516dc6fea7e0f88e10f559c788db9b1a162b581c2a1864f"
+    },
+    {
+      "filename": "df088f3c121206846f8a4789bf530396.png",
+      "sha256": "91fc193418f7ddeb7593c67a60a30f0f75d0f5a168e47b37f3ab13d13ba5e5af",
+      "size": [
+        617,
+        617
+      ],
+      "v1_counts": {
+        "components_before": 5,
+        "components_after": 5,
+        "color_regions": 34,
+        "noise_regions_merged": 14,
+        "geometry_changed_px": 35,
+        "changed_px": 376003,
+        "geometry_added_px": 21,
+        "geometry_removed_px": 14,
+        "changed_foreground_px": 9157,
+        "changed_background_px": 366846,
+        "review_px": 0,
+        "foreground_px": 9452,
+        "known_height_px": 0
+      },
+      "v2_counts": {
+        "components_before": 5,
+        "components_after": 4,
+        "fragments_removed": 1,
+        "footprints_regularized": 4,
+        "geometry_review_px": 0,
+        "color_regions": 21,
+        "noise_regions_merged": 5,
+        "shared_boundaries_regularized": 0,
+        "geometry_changed_px": 561,
+        "changed_px": 375716,
+        "geometry_added_px": 206,
+        "geometry_removed_px": 355,
+        "changed_foreground_px": 9054,
+        "changed_background_px": 366662,
+        "review_px": 0,
+        "foreground_px": 9296,
+        "known_height_px": 0
+      },
+      "core_seconds": 0.1042,
+      "cleaned_pixel_sha256": "db33b26e85a6c78303b40fd527dd8cb19a9933e5dc7373d42804d371aa46fb21"
+    }
+  ],
+  "synthetic_geometry_benchmark": [
+    {
+      "scale": 0.6,
+      "angle_deg": 0,
+      "boundary_band_px": 1,
+      "touches_frame": false,
+      "local_mask_iou": 0.977596,
+      "v2_mask_iou": 1.0,
+      "local_boundary_iou": 0.81201,
+      "v2_boundary_iou": 1.0
+    },
+    {
+      "scale": 0.6,
+      "angle_deg": 13,
+      "boundary_band_px": 1,
+      "touches_frame": false,
+      "local_mask_iou": 0.976992,
+      "v2_mask_iou": 0.996853,
+      "local_boundary_iou": 0.807095,
+      "v2_boundary_iou": 0.929612
+    },
+    {
+      "scale": 0.6,
+      "angle_deg": 27,
+      "boundary_band_px": 1,
+      "touches_frame": false,
+      "local_mask_iou": 0.977173,
+      "v2_mask_iou": 0.996014,
+      "local_boundary_iou": 0.811245,
+      "v2_boundary_iou": 0.922414
+    },
+    {
+      "scale": 0.6,
+      "angle_deg": 45,
+      "boundary_band_px": 1,
+      "touches_frame": false,
+      "local_mask_iou": 0.976071,
+      "v2_mask_iou": 1.0,
+      "local_boundary_iou": 0.808061,
+      "v2_boundary_iou": 1.0
+    },
+    {
+      "scale": 0.6,
+      "angle_deg": 73,
+      "boundary_band_px": 1,
+      "touches_frame": false,
+      "local_mask_iou": 0.978197,
+      "v2_mask_iou": 0.994962,
+      "local_boundary_iou": 0.82684,
+      "v2_boundary_iou": 0.894495
+    },
+    {
+      "scale": 1.0,
+      "angle_deg": 0,
+      "boundary_band_px": 2,
+      "touches_frame": false,
+      "local_mask_iou": 0.97723,
+      "v2_mask_iou": 1.0,
+      "local_boundary_iou": 0.814465,
+      "v2_boundary_iou": 1.0
+    },
+    {
+      "scale": 1.0,
+      "angle_deg": 13,
+      "boundary_band_px": 2,
+      "touches_frame": false,
+      "local_mask_iou": 0.977304,
+      "v2_mask_iou": 0.997351,
+      "local_boundary_iou": 0.819454,
+      "v2_boundary_iou": 0.949077
+    },
+    {
+      "scale": 1.0,
+      "angle_deg": 27,
+      "boundary_band_px": 2,
+      "touches_frame": false,
+      "local_mask_iou": 0.977459,
+      "v2_mask_iou": 0.997353,
+      "local_boundary_iou": 0.823317,
+      "v2_boundary_iou": 0.955026
+    },
+    {
+      "scale": 1.0,
+      "angle_deg": 45,
+      "boundary_band_px": 2,
+      "touches_frame": false,
+      "local_mask_iou": 0.976737,
+      "v2_mask_iou": 1.0,
+      "local_boundary_iou": 0.819325,
+      "v2_boundary_iou": 1.0
+    },
+    {
+      "scale": 1.0,
+      "angle_deg": 73,
+      "boundary_band_px": 2,
+      "touches_frame": false,
+      "local_mask_iou": 0.977298,
+      "v2_mask_iou": 0.99773,
+      "local_boundary_iou": 0.819987,
+      "v2_boundary_iou": 0.957887
+    },
+    {
+      "scale": 1.6,
+      "angle_deg": 0,
+      "boundary_band_px": 3,
+      "touches_frame": false,
+      "local_mask_iou": 0.977582,
+      "v2_mask_iou": 1.0,
+      "local_boundary_iou": 0.815324,
+      "v2_boundary_iou": 1.0
+    },
+    {
+      "scale": 1.6,
+      "angle_deg": 13,
+      "boundary_band_px": 3,
+      "touches_frame": true,
+      "local_mask_iou": 0.976929,
+      "v2_mask_iou": 0.976929,
+      "local_boundary_iou": 0.8125,
+      "v2_boundary_iou": 0.8125
+    },
+    {
+      "scale": 1.6,
+      "angle_deg": 27,
+      "boundary_band_px": 3,
+      "touches_frame": true,
+      "local_mask_iou": 0.977005,
+      "v2_mask_iou": 0.977005,
+      "local_boundary_iou": 0.815624,
+      "v2_boundary_iou": 0.815624
+    },
+    {
+      "scale": 1.6,
+      "angle_deg": 45,
+      "boundary_band_px": 3,
+      "touches_frame": true,
+      "local_mask_iou": 0.977128,
+      "v2_mask_iou": 0.977128,
+      "local_boundary_iou": 0.81537,
+      "v2_boundary_iou": 0.81537
+    },
+    {
+      "scale": 1.6,
+      "angle_deg": 73,
+      "boundary_band_px": 3,
+      "touches_frame": true,
+      "local_mask_iou": 0.974106,
+      "v2_mask_iou": 0.974106,
+      "local_boundary_iou": 0.793472,
+      "v2_boundary_iou": 0.793472
+    }
+  ],
+  "input_archive": {
+    "filename": "v2测试用图(1).zip",
+    "sha256": "01ae01a3251e8a3ca2b1d338c906be967256b83abd62004c77514a7b4e2e2ae8"
+  },
+  "baseline_archive": {
+    "filename": "backend_cv_postprocess_v1.zip",
+    "sha256": "025b76f0da58d844d4aeccc135d4b30a2295360327b21305e07f5396d9334cc5"
+  }
+}

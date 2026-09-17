@@ -1,0 +1,12 @@
+{
+  "mode": "palette",
+  "background_rgb": "#FFFFFF",
+  "colors": [
+    {"name": "H1_0_to_10m", "rgb": "#50C878", "height_m": null},
+    {"name": "H2_10_to_18m", "rgb": "#43A865", "height_m": null},
+    {"name": "H3_18_to_27m", "rgb": "#368852", "height_m": null},
+    {"name": "H4_27_to_60m", "rgb": "#2A683E", "height_m": null},
+    {"name": "H5_60_to_100m", "rgb": "#1E4C2E", "height_m": null},
+    {"name": "H6_100m_plus", "rgb": "#15341F", "height_m": null}
+  ]
+}

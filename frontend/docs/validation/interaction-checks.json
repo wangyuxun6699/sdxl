@@ -1,0 +1,11 @@
+{
+  "errors": [],
+  "compareDrag": true,
+  "keyboardCompare": true,
+  "analysis": true,
+  "editNotes": true,
+  "search": true,
+  "sourceFilter": true,
+  "draftReload": true,
+  "offlineGuard": true
+}

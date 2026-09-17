@@ -3,6 +3,12 @@
 import os
 import sys
 from datetime import datetime
+from pathlib import Path
+
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from backend.postprocessing.scene import load_scene_fields
 
 import cv2
 import numpy as np
@@ -14,155 +20,14 @@ def _log(message: str) -> None:
     print(f"[{timestamp}] [2D23D] {message}", flush=True)
 
 
-BUILDING_COLOR_RANGES = {
-    # OpenCV HSV 的红色跨越 0/180，因此需要两段阈值；其余颜色只需一段。
-    "red": [
-        (np.array([0, 40, 40]), np.array([12, 255, 255])),
-        (np.array([168, 40, 40]), np.array([180, 255, 255])),
-    ],
-    "yellow": [
-        (np.array([15, 40, 40]), np.array([38, 255, 255])),
-    ],
-    "green": [
-        (np.array([35, 40, 40]), np.array([90, 255, 255])),
-    ],
-    "blue": [
-        (np.array([90, 40, 40]), np.array([135, 255, 255])),
-    ],
-}
-
-
-def _normalize_target_colors(target_color: str | None = None) -> list[str]:
-    aliases = {
-        "residential": "green",
-        "green": "green",
-        "commercial": "blue",
-        "blue": "blue",
-        "public": "red",
-        "red": "red",
-        "industrial": "yellow",
-        "yellow": "yellow",
-        "auto": "auto",
-        "all": "auto",
-    }
-    normalized = aliases.get((target_color or "auto").strip().lower(), "auto")
-    if normalized == "auto":
-        return list(BUILDING_COLOR_RANGES.keys())
-    return [normalized]
-
-
-def _build_colored_building_mask(
-    hsv_image: np.ndarray,
-    target_color: str | None = None,
-) -> np.ndarray:
-    building_mask = np.zeros(hsv_image.shape[:2], dtype=np.uint8)
-    target_colors = _normalize_target_colors(target_color)
-    _log(f"Target building colors: {', '.join(target_colors)}")
-
-    for color_name in target_colors:
-        ranges = BUILDING_COLOR_RANGES[color_name]
-        color_mask = np.zeros_like(building_mask)
-        for lower_bound, upper_bound in ranges:
-            color_mask = cv2.bitwise_or(
-                color_mask,
-                cv2.inRange(hsv_image, lower_bound, upper_bound),
-            )
-
-        pixel_count = int(np.count_nonzero(color_mask))
-        _log(f"{color_name.title()} mask pixels: {pixel_count}")
-        building_mask = cv2.bitwise_or(building_mask, color_mask)
-
-    _log(f"Combined colored building mask pixels: {int(np.count_nonzero(building_mask))}")
-    return building_mask
-
-
-def _is_line_or_border_artifact(contour: np.ndarray, image_width: int, image_height: int) -> bool:
-    x, y, width, height = cv2.boundingRect(contour)
-    area = cv2.contourArea(contour)
-    bbox_area = width * height
-    if bbox_area == 0:
-        return True
-
-    touches_border = (
-        x <= 1
-        or y <= 1
-        or x + width >= image_width - 1
-        or y + height >= image_height - 1
-    )
-    covers_most_canvas = width > image_width * 0.75 and height > image_height * 0.75
-    if touches_border and covers_most_canvas:
-        return True
-
-    short_side = min(width, height)
-    long_side = max(width, height)
-    if short_side <= 12 and long_side / max(short_side, 1) >= 3:
-        return True
-
-    return False
-
-
 def generate_3d_html_preview(image_path, output_html_path, target_color: str | None = None):
+    # target_color is retained only for old callers; cleanup no longer uses hue bins.
     _log(f"Input image path: {image_path}")
-    _log(f"Output html path: {output_html_path}")
-
-    img = cv2.imread(image_path, cv2.IMREAD_UNCHANGED)
-    if img is None:
-        raise ValueError(f"Unable to read image: {image_path}")
-    _log(f"Loaded image shape: {img.shape}")
-
-    if len(img.shape) == 3 and img.shape[-1] == 4:
-        _log("Detected alpha channel, compositing onto white background")
-        alpha_channel = img[:, :, 3] / 255.0
-        rgb_channels = img[:, :, :3]
-        white_background = np.ones_like(rgb_channels, dtype=np.uint8) * 255
-        img_bgr = (
-            rgb_channels * alpha_channel[:, :, np.newaxis]
-            + white_background * (1 - alpha_channel[:, :, np.newaxis])
-        ).astype(np.uint8)
-    else:
-        img_bgr = img
-
-    img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
-    hsv = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2HSV)
-    v_channel = hsv[:, :, 2]
-    v_smooth = cv2.medianBlur(v_channel, 5)
-
-    height_map = np.zeros_like(v_channel, dtype=np.float32)
-    max_height = 80
-
-    # 只提取当前分区允许的建筑色，避免背景或模型生成的杂色被误抬升为建筑。
-    building_mask = _build_colored_building_mask(hsv, target_color)
-
-    # 开运算去除孤立噪点；后续轮廓过滤再排除边框和细长线条。
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
-    cleaned_mask = cv2.morphologyEx(building_mask, cv2.MORPH_OPEN, kernel, iterations=2)
-    contours, _ = cv2.findContours(cleaned_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    _log(f"Detected contours: {len(contours)}")
-
-    skipped_artifacts = 0
-    kept_contours = 0
-    for contour in contours:
-        if cv2.contourArea(contour) < 50:
-            continue
-        if _is_line_or_border_artifact(contour, cleaned_mask.shape[1], cleaned_mask.shape[0]):
-            skipped_artifacts += 1
-            continue
-        kept_contours += 1
-
-        single_block_mask = np.zeros_like(cleaned_mask)
-        cv2.drawContours(single_block_mask, [contour], -1, 255, thickness=cv2.FILLED)
-        block_pixels = v_smooth[single_block_mask == 255]
-
-        if len(block_pixels) == 0:
-            continue
-
-        # 同色系中深色代表高层、浅色代表低层，按 HSV 亮度反推相对高度。
-        median_v = np.median(block_pixels)
-        block_height = ((255 - median_v) / 255.0) * max_height
-        height_map[single_block_mask == 255] = block_height
-
-    _log(f"Usable building contours: {kept_contours}")
-    _log(f"Skipped line/border artifacts: {skipped_artifacts}")
+    scene = load_scene_fields(image_path)
+    img_rgb = scene.rgb
+    height_map = scene.proxy_height
+    for warning in scene.metadata["warnings"]:
+        _log(warning)
 
     # 网格降采样到 25%，控制 Mesh3d 顶点数和最终 HTML 体积。
     scale_percent = 25
@@ -231,7 +96,11 @@ def generate_3d_html_preview(image_path, output_html_path, target_color: str | N
         paper_bgcolor="white",
     )
 
-    os.makedirs(os.path.dirname(output_html_path), exist_ok=True)
+    label = ("形态示意：未映射部分使用统一示意高度" if scene.metadata["unknown_height_pixels"]
+             else "形态示意：采用配置中的代表高度；平面坐标为像素")
+    fig.add_annotation(text=label, x=0.5, y=0.02, xref="paper", yref="paper", showarrow=False,
+                       font=dict(size=12, color="#52525b"), bgcolor="rgba(255,255,255,0.85)")
+    Path(output_html_path).parent.mkdir(parents=True, exist_ok=True)
     fig.write_html(output_html_path, auto_open=False)
     _log(f"HTML exported: {output_html_path}")
 
