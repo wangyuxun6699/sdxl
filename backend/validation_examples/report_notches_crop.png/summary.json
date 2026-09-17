@@ -1,0 +1,34 @@
+{
+  "pipeline_version": "1.0.0",
+  "source": {
+    "filename": "report_notches_crop.png",
+    "sha256": "c461ab35aef7bea90ee2fc705b812eb070de71b2fb30d80e6cdc8cb71ef50fb7"
+  },
+  "size": {
+    "width": 320,
+    "height": 295
+  },
+  "counts": {
+    "components_before": 4,
+    "components_after": 4,
+    "color_regions": 241,
+    "noise_regions_merged": 2,
+    "geometry_changed_px": 73,
+    "changed_px": 20317,
+    "geometry_added_px": 47,
+    "geometry_removed_px": 26,
+    "changed_foreground_px": 1930,
+    "changed_background_px": 18387,
+    "review_px": 17185,
+    "foreground_px": 19310,
+    "known_height_px": 0
+  },
+  "elapsed_seconds": 0.0922,
+  "warnings": [
+    "Color regions are not building instances or ordered height classes.",
+    "Stable false color splits cannot be distinguished from true height parts using RGB alone.",
+    "Uncertain region colors were preserved; inspect review_mask.png.",
+    "Unknown heights are NaN, not zero; no meters are inferred from brightness."
+  ],
+  "height_source": "unknown"
+}

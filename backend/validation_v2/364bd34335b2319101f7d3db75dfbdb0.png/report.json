@@ -1,0 +1,4825 @@
+{
+  "schema_version": 1,
+  "pipeline_version": "2.0.0",
+  "mode": "auto",
+  "config": {
+    "mode": "auto",
+    "background_rgb": null,
+    "background_delta": 10.0,
+    "color_delta": 5.0,
+    "repair_geometry": true,
+    "clean_colors": true,
+    "defect_radius": 1,
+    "max_hole_area": 4,
+    "max_geometry_change_ratio": 0.025,
+    "geometry_mode": "regularize",
+    "boundary_tolerance_ratio": 0.24,
+    "regularization_max_change_ratio": 0.2,
+    "remove_fragments": true,
+    "fragment_area_ratio": 0.025,
+    "regularize_color_boundaries": true,
+    "max_noise_region_area": 2,
+    "max_prototypes": 48,
+    "max_pixels": 16777216,
+    "palette_delta": 10.0,
+    "palette_margin": 2.0,
+    "colors": []
+  },
+  "config_sha256": "4f6eebb61ff264ad7a837ed23760295272d89246ecfdc4191a5fb0acaa241648",
+  "input_pixel_sha256": "377fc4fc89c637f1d41fc5d74e1d2b91a09399742f39c666c89f317985bd3f6e",
+  "cleaned_pixel_sha256": "88ff71cfb96e67d04d2b6510324d04bf876ee0bd1eb7a30f48cdf0992b6ac404",
+  "size": {
+    "width": 617,
+    "height": 617
+  },
+  "background_rgb": [
+    254,
+    254,
+    254
+  ],
+  "background_border_support": 0.9988,
+  "scale_1024": 0.6025,
+  "geometry_mode": "regularize",
+  "fragment_reference": {
+    "typical_component_area_px": 2426.0,
+    "typical_component_width_px": 40.5,
+    "fragment_area_limit_px": 60.65
+  },
+  "counts": {
+    "components_before": 12,
+    "components_after": 11,
+    "fragments_removed": 1,
+    "footprints_regularized": 9,
+    "geometry_review_px": 0,
+    "color_regions": 198,
+    "noise_regions_merged": 15,
+    "shared_boundaries_regularized": 1,
+    "geometry_changed_px": 713,
+    "changed_px": 362753,
+    "geometry_added_px": 354,
+    "geometry_removed_px": 359,
+    "changed_foreground_px": 25124,
+    "changed_background_px": 337629,
+    "review_px": 2713,
+    "foreground_px": 28727,
+    "known_height_px": 0
+  },
+  "height_source": "unknown",
+  "elapsed_seconds": 0.2468,
+  "warnings": [
+    "Color regions are not building instances or ordered height classes.",
+    "Stable false color splits cannot be distinguished from true height parts using RGB alone.",
+    "Uncertain region colors were preserved; inspect review_mask.png.",
+    "Unknown heights are NaN, not zero; no meters are inferred from brightness."
+  ],
+  "components": [
+    {
+      "id": 1,
+      "bbox_xywh": [
+        284,
+        189,
+        222,
+        58
+      ],
+      "area_before_px": 10806,
+      "area_after_px": 10830,
+      "region_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152
+      ],
+      "multiple_color_regions_preserved": true,
+      "events": [
+        "footprint_regularized"
+      ],
+      "geometry": {
+        "shape": "rectangle",
+        "orientation_degrees": -0.723,
+        "axis_support": 0.941,
+        "wall_width_px": 18.58,
+        "tolerance_px": 4.46,
+        "review_required": false,
+        "rectangle_iou": 0.9387,
+        "structural_wing_preserved": false,
+        "rejected_candidates": [],
+        "accepted_tolerance_px": 8.92,
+        "changed_area_ratio": 0.01832,
+        "max_added_support_distance_px": 1.0,
+        "max_removed_support_distance_px": 1.0
+      }
+    },
+    {
+      "id": 2,
+      "bbox_xywh": [
+        209,
+        206,
+        29,
+        13
+      ],
+      "area_before_px": 375,
+      "area_after_px": 377,
+      "region_ids": [
+        153
+      ],
+      "multiple_color_regions_preserved": false,
+      "events": [
+        "footprint_regularized",
+        "soft_color_noise_collapsed"
+      ],
+      "geometry": {
+        "shape": "rectangle",
+        "orientation_degrees": 0.0,
+        "axis_support": 0.964,
+        "wall_width_px": 10.8,
+        "tolerance_px": 2.59,
+        "review_required": false,
+        "rectangle_iou": 0.9947,
+        "structural_wing_preserved": false,
+        "rejected_candidates": [],
+        "accepted_tolerance_px": 5.18,
+        "changed_area_ratio": 0.00533,
+        "max_added_support_distance_px": 1.0,
+        "max_removed_support_distance_px": 0.0
+      }
+    },
+    {
+      "id": 3,
+      "bbox_xywh": [
+        298,
+        254,
+        209,
+        47
+      ],
+      "area_before_px": 7282,
+      "area_after_px": 7240,
+      "region_ids": [
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167
+      ],
+      "multiple_color_regions_preserved": true,
+      "events": [
+        "footprint_regularized"
+      ],
+      "geometry": {
+        "shape": "wall_polygon",
+        "orientation_degrees": 0.512,
+        "axis_support": 1.0,
+        "wall_width_px": 17.0,
+        "tolerance_px": 4.08,
+        "review_required": false,
+        "rectangle_iou": 0.7697,
+        "structural_wing_preserved": false,
+        "rejected_candidates": [],
+        "accepted_tolerance_px": 4.08,
+        "changed_area_ratio": 0.0173,
+        "max_added_support_distance_px": 1.0,
+        "max_removed_support_distance_px": 2.0
+      }
+    },
+    {
+      "id": 4,
+      "bbox_xywh": [
+        251,
+        257,
+        25,
+        15
+      ],
+      "area_before_px": 268,
+      "area_after_px": 268,
+      "region_ids": [
+        168
+      ],
+      "multiple_color_regions_preserved": false,
+      "events": [],
+      "geometry": {
+        "shape": "wall_polygon",
+        "orientation_degrees": -0.569,
+        "axis_support": 0.885,
+        "wall_width_px": 7.0,
+        "tolerance_px": 1.68,
+        "review_required": false,
+        "rectangle_iou": 0.7539,
+        "structural_wing_preserved": false,
+        "rejected_candidates": [],
+        "accepted_tolerance_px": 1.68,
+        "changed_area_ratio": 0.0,
+        "max_added_support_distance_px": 0.0,
+        "max_removed_support_distance_px": 0.0
+      }
+    },
+    {
+      "id": 5,
+      "bbox_xywh": [
+        85,
+        261,
+        34,
+        13
+      ],
+      "area_before_px": 437,
+      "area_after_px": 442,
+      "region_ids": [
+        169
+      ],
+      "multiple_color_regions_preserved": false,
+      "events": [
+        "footprint_regularized"
+      ],
+      "geometry": {
+        "shape": "rectangle",
+        "orientation_degrees": 0.758,
+        "axis_support": 0.933,
+        "wall_width_px": 11.0,
+        "tolerance_px": 2.64,
+        "review_required": false,
+        "rectangle_iou": 0.9887,
+        "structural_wing_preserved": false,
+        "rejected_candidates": [],
+        "accepted_tolerance_px": 5.28,
+        "changed_area_ratio": 0.01144,
+        "max_added_support_distance_px": 1.0,
+        "max_removed_support_distance_px": 0.0
+      }
+    },
+    {
+      "id": 6,
+      "bbox_xywh": [
+        171,
+        260,
+        17,
+        14
+      ],
+      "area_before_px": 223,
+      "area_after_px": 221,
+      "region_ids": [
+        170
+      ],
+      "multiple_color_regions_preserved": false,
+      "events": [
+        "footprint_regularized"
+      ],
+      "geometry": {
+        "shape": "rectangle",
+        "orientation_degrees": -1.11,
+        "axis_support": 1.0,
+        "wall_width_px": 9.0,
+        "tolerance_px": 2.16,
+        "review_required": false,
+        "rectangle_iou": 0.991,
+        "structural_wing_preserved": false,
+        "rejected_candidates": [],
+        "accepted_tolerance_px": 4.32,
+        "changed_area_ratio": 0.00897,
+        "max_added_support_distance_px": 0.0,
+        "max_removed_support_distance_px": 1.0
+      }
+    },
+    {
+      "id": 7,
+      "bbox_xywh": [
+        208,
+        297,
+        66,
+        25
+      ],
+      "area_before_px": 1497,
+      "area_after_px": 1592,
+      "region_ids": [
+        171
+      ],
+      "multiple_color_regions_preserved": false,
+      "events": [
+        "footprint_regularized"
+      ],
+      "geometry": {
+        "shape": "rectangle",
+        "orientation_degrees": -0.608,
+        "axis_support": 0.945,
+        "wall_width_px": 17.0,
+        "tolerance_px": 4.08,
+        "review_required": false,
+        "rectangle_iou": 0.9186,
+        "structural_wing_preserved": false,
+        "rejected_candidates": [],
+        "accepted_tolerance_px": 8.16,
+        "changed_area_ratio": 0.08751,
+        "max_added_support_distance_px": 5.0,
+        "max_removed_support_distance_px": 1.0
+      }
+    },
+    {
+      "id": 8,
+      "bbox_xywh": [
+        85,
+        299,
+        82,
+        16
+      ],
+      "area_before_px": 1311,
+      "area_after_px": 1312,
+      "region_ids": [
+        172
+      ],
+      "multiple_color_regions_preserved": false,
+      "events": [
+        "footprint_regularized"
+      ],
+      "geometry": {
+        "shape": "rectangle",
+        "orientation_degrees": 0.0,
+        "axis_support": 1.0,
+        "wall_width_px": 13.0,
+        "tolerance_px": 3.12,
+        "review_required": false,
+        "rectangle_iou": 0.9992,
+        "structural_wing_preserved": false,
+        "rejected_candidates": [],
+        "accepted_tolerance_px": 6.24,
+        "changed_area_ratio": 0.00076,
+        "max_added_support_distance_px": 1.0,
+        "max_removed_support_distance_px": 0.0
+      }
+    },
+    {
+      "id": 9,
+      "bbox_xywh": [
+        427,
+        309,
+        80,
+        21
+      ],
+      "area_before_px": 1680,
+      "area_after_px": 1680,
+      "region_ids": [
+        173
+      ],
+      "multiple_color_regions_preserved": false,
+      "events": [],
+      "geometry": {
+        "shape": "rectangle",
+        "orientation_degrees": 0.0,
+        "axis_support": 1.0,
+        "wall_width_px": 17.0,
+        "tolerance_px": 4.08,
+        "review_required": false,
+        "rectangle_iou": 1.0,
+        "structural_wing_preserved": false,
+        "rejected_candidates": [],
+        "accepted_tolerance_px": 8.16,
+        "changed_area_ratio": 0.0,
+        "max_added_support_distance_px": 0.0,
+        "max_removed_support_distance_px": 0.0
+      }
+    },
+    {
+      "id": 10,
+      "bbox_xywh": [
+        209,
+        343,
+        67,
+        48
+      ],
+      "area_before_px": 3014,
+      "area_after_px": 3016,
+      "region_ids": [
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197
+      ],
+      "multiple_color_regions_preserved": true,
+      "events": [
+        "footprint_regularized"
+      ],
+      "geometry": {
+        "shape": "rectangle",
+        "orientation_degrees": 0.0,
+        "axis_support": 1.0,
+        "wall_width_px": 17.0,
+        "tolerance_px": 4.08,
+        "review_required": false,
+        "rectangle_iou": 0.9997,
+        "structural_wing_preserved": false,
+        "rejected_candidates": [],
+        "accepted_tolerance_px": 8.16,
+        "changed_area_ratio": 0.00133,
+        "max_added_support_distance_px": 1.0,
+        "max_removed_support_distance_px": 1.0
+      }
+    },
+    {
+      "id": 11,
+      "bbox_xywh": [
+        210,
+        393,
+        66,
+        34
+      ],
+      "area_before_px": 1838,
+      "area_after_px": 1749,
+      "region_ids": [
+        198
+      ],
+      "multiple_color_regions_preserved": false,
+      "events": [
+        "footprint_regularized",
+        "soft_color_noise_collapsed"
+      ],
+      "geometry": {
+        "shape": "rectangle",
+        "orientation_degrees": -0.686,
+        "axis_support": 0.903,
+        "wall_width_px": 17.96,
+        "tolerance_px": 4.31,
+        "review_required": false,
+        "rectangle_iou": 0.8731,
+        "structural_wing_preserved": false,
+        "rejected_candidates": [],
+        "accepted_tolerance_px": 8.62,
+        "changed_area_ratio": 0.13221,
+        "max_added_support_distance_px": 6.0,
+        "max_removed_support_distance_px": 7.0
+      }
+    },
+    {
+      "id": 12,
+      "bbox_xywh": [
+        0,
+        616,
+        1,
+        1
+      ],
+      "area_before_px": 1,
+      "area_after_px": 0,
+      "region_ids": [],
+      "multiple_color_regions_preserved": false,
+      "events": [
+        "isolated_fragment_removed"
+      ],
+      "geometry": {
+        "reason": "isolated_pixel_speck",
+        "area_px": 1
+      }
+    }
+  ],
+  "regions": [
+    {
+      "id": 1,
+      "component_id": 1,
+      "area_px": 5632,
+      "bbox_xywh": [
+        372,
+        190,
+        134,
+        56
+      ],
+      "representative_rgb": [
+        46,
+        130,
+        69
+      ],
+      "spread_delta_e_p90": 2.327,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 2,
+      "component_id": 1,
+      "area_px": 3750,
+      "bbox_xywh": [
+        284,
+        191,
+        88,
+        55
+      ],
+      "representative_rgb": [
+        46,
+        129,
+        69
+      ],
+      "spread_delta_e_p90": 2.799,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 3,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        462,
+        212,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        44,
+        128,
+        72
+      ],
+      "spread_delta_e_p90": 0.665,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 4,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        314,
+        213,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        46,
+        129,
+        71
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 5,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        314,
+        215,
+        1,
+        3
+      ],
+      "representative_rgb": [
+        46,
+        129,
+        71
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 6,
+      "component_id": 1,
+      "area_px": 19,
+      "bbox_xywh": [
+        302,
+        219,
+        6,
+        5
+      ],
+      "representative_rgb": [
+        45,
+        130,
+        69
+      ],
+      "spread_delta_e_p90": 3.736,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 7,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        505,
+        244,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        44,
+        126,
+        70
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 8,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        431,
+        245,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        45,
+        130,
+        69
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 9,
+      "component_id": 1,
+      "area_px": 688,
+      "bbox_xywh": [
+        370,
+        191,
+        30,
+        35
+      ],
+      "representative_rgb": [
+        62,
+        160,
+        92
+      ],
+      "spread_delta_e_p90": 2.735,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 10,
+      "component_id": 1,
+      "area_px": 5,
+      "bbox_xywh": [
+        298,
+        212,
+        5,
+        1
+      ],
+      "representative_rgb": [
+        143,
+        195,
+        138
+      ],
+      "spread_delta_e_p90": 18.571,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 11,
+      "component_id": 1,
+      "area_px": 4,
+      "bbox_xywh": [
+        315,
+        212,
+        4,
+        1
+      ],
+      "representative_rgb": [
+        158,
+        203,
+        154
+      ],
+      "spread_delta_e_p90": 2.517,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 12,
+      "component_id": 1,
+      "area_px": 12,
+      "bbox_xywh": [
+        341,
+        211,
+        12,
+        1
+      ],
+      "representative_rgb": [
+        50,
+        144,
+        61
+      ],
+      "spread_delta_e_p90": 4.779,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 13,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        361,
+        212,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        182,
+        213,
+        172
+      ],
+      "spread_delta_e_p90": 14.713,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 14,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        399,
+        211,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        54,
+        156,
+        81
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 15,
+      "component_id": 1,
+      "area_px": 4,
+      "bbox_xywh": [
+        411,
+        212,
+        4,
+        1
+      ],
+      "representative_rgb": [
+        141,
+        195,
+        134
+      ],
+      "spread_delta_e_p90": 13.826,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 16,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        423,
+        211,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        40,
+        142,
+        65
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 17,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        425,
+        212,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        63,
+        149,
+        81
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 18,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        435,
+        212,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        94,
+        164,
+        98
+      ],
+      "spread_delta_e_p90": 1.048,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 19,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        438,
+        212,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        60,
+        149,
+        72
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 20,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        449,
+        212,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        195,
+        224,
+        186
+      ],
+      "spread_delta_e_p90": 9.945,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 21,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        453,
+        212,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        181,
+        210,
+        173
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 22,
+      "component_id": 1,
+      "area_px": 4,
+      "bbox_xywh": [
+        456,
+        211,
+        4,
+        2
+      ],
+      "representative_rgb": [
+        124,
+        184,
+        122
+      ],
+      "spread_delta_e_p90": 17.07,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 23,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        466,
+        211,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        69,
+        161,
+        83
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 24,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        478,
+        211,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        173,
+        213,
+        160
+      ],
+      "spread_delta_e_p90": 9.231,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 25,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        481,
+        211,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        216,
+        232,
+        200
+      ],
+      "spread_delta_e_p90": 1.665,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 26,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        298,
+        214,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        110,
+        187,
+        127
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 27,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        324,
+        214,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        115,
+        179,
+        121
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 28,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        352,
+        213,
+        1,
+        2
+      ],
+      "representative_rgb": [
+        98,
+        168,
+        108
+      ],
+      "spread_delta_e_p90": 2.283,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 29,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        399,
+        213,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        94,
+        172,
+        105
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 30,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        434,
+        214,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        134,
+        195,
+        148
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 31,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        439,
+        214,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        40,
+        144,
+        68
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 32,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        483,
+        213,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        113,
+        177,
+        123
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 33,
+      "component_id": 1,
+      "area_px": 6,
+      "bbox_xywh": [
+        303,
+        216,
+        4,
+        3
+      ],
+      "representative_rgb": [
+        65,
+        162,
+        90
+      ],
+      "spread_delta_e_p90": 8.466,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 34,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        311,
+        216,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        82,
+        178,
+        118
+      ],
+      "spread_delta_e_p90": 3.465,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 35,
+      "component_id": 1,
+      "area_px": 8,
+      "bbox_xywh": [
+        352,
+        216,
+        7,
+        2
+      ],
+      "representative_rgb": [
+        170,
+        204,
+        148
+      ],
+      "spread_delta_e_p90": 18.094,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 36,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        425,
+        215,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        70,
+        153,
+        84
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 37,
+      "component_id": 1,
+      "area_px": 16,
+      "bbox_xywh": [
+        434,
+        216,
+        5,
+        7
+      ],
+      "representative_rgb": [
+        121,
+        192,
+        143
+      ],
+      "spread_delta_e_p90": 26.331,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 38,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        360,
+        217,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        152,
+        202,
+        144
+      ],
+      "spread_delta_e_p90": 21.864,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 39,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        423,
+        218,
+        1,
+        3
+      ],
+      "representative_rgb": [
+        80,
+        160,
+        93
+      ],
+      "spread_delta_e_p90": 3.836,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 40,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        436,
+        217,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        220,
+        244,
+        235
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 41,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        474,
+        217,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        121,
+        191,
+        122
+      ],
+      "spread_delta_e_p90": 1.732,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 42,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        298,
+        222,
+        1,
+        2
+      ],
+      "representative_rgb": [
+        100,
+        176,
+        118
+      ],
+      "spread_delta_e_p90": 1.811,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 43,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        340,
+        223,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        52,
+        144,
+        63
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 44,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        435,
+        224,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        100,
+        182,
+        124
+      ],
+      "spread_delta_e_p90": 6.013,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 45,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        449,
+        223,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        168,
+        215,
+        178
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 46,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        476,
+        223,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        32,
+        142,
+        54
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 47,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        300,
+        225,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        97,
+        169,
+        109
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 48,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        379,
+        226,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        103,
+        174,
+        115
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 49,
+      "component_id": 1,
+      "area_px": 17,
+      "bbox_xywh": [
+        471,
+        244,
+        17,
+        1
+      ],
+      "representative_rgb": [
+        109,
+        181,
+        117
+      ],
+      "spread_delta_e_p90": 7.902,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 50,
+      "component_id": 1,
+      "area_px": 24,
+      "bbox_xywh": [
+        320,
+        245,
+        24,
+        1
+      ],
+      "representative_rgb": [
+        89,
+        172,
+        98
+      ],
+      "spread_delta_e_p90": 4.103,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 51,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        348,
+        245,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        141,
+        203,
+        146
+      ],
+      "spread_delta_e_p90": 1.217,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 52,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        372,
+        245,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        144,
+        202,
+        144
+      ],
+      "spread_delta_e_p90": 15.889,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 53,
+      "component_id": 1,
+      "area_px": 24,
+      "bbox_xywh": [
+        376,
+        245,
+        24,
+        1
+      ],
+      "representative_rgb": [
+        94,
+        174,
+        103
+      ],
+      "spread_delta_e_p90": 2.921,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 54,
+      "component_id": 1,
+      "area_px": 17,
+      "bbox_xywh": [
+        402,
+        245,
+        17,
+        1
+      ],
+      "representative_rgb": [
+        129,
+        192,
+        131
+      ],
+      "spread_delta_e_p90": 3.897,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 55,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        421,
+        245,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        159,
+        211,
+        156
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 56,
+      "component_id": 1,
+      "area_px": 8,
+      "bbox_xywh": [
+        423,
+        245,
+        8,
+        1
+      ],
+      "representative_rgb": [
+        168,
+        215,
+        172
+      ],
+      "spread_delta_e_p90": 4.47,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 57,
+      "component_id": 1,
+      "area_px": 17,
+      "bbox_xywh": [
+        432,
+        245,
+        17,
+        1
+      ],
+      "representative_rgb": [
+        179,
+        220,
+        183
+      ],
+      "spread_delta_e_p90": 5.821,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 58,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        372,
+        192,
+        1,
+        2
+      ],
+      "representative_rgb": [
+        64,
+        154,
+        97
+      ],
+      "spread_delta_e_p90": 0.898,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 59,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        399,
+        195,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        53,
+        145,
+        80
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 60,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        399,
+        197,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        54,
+        145,
+        80
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 61,
+      "component_id": 1,
+      "area_px": 8,
+      "bbox_xywh": [
+        399,
+        199,
+        1,
+        8
+      ],
+      "representative_rgb": [
+        53,
+        145,
+        81
+      ],
+      "spread_delta_e_p90": 0.984,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 62,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        399,
+        208,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        51,
+        143,
+        79
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 63,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        372,
+        210,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        68,
+        155,
+        102
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 64,
+      "component_id": 1,
+      "area_px": 5,
+      "bbox_xywh": [
+        390,
+        210,
+        5,
+        1
+      ],
+      "representative_rgb": [
+        68,
+        150,
+        102
+      ],
+      "spread_delta_e_p90": 1.83,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 65,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        397,
+        210,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        66,
+        148,
+        100
+      ],
+      "spread_delta_e_p90": 0.637,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 66,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        319,
+        212,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        160,
+        198,
+        158
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 67,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        323,
+        212,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        153,
+        193,
+        152
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 68,
+      "component_id": 1,
+      "area_px": 6,
+      "bbox_xywh": [
+        364,
+        212,
+        6,
+        1
+      ],
+      "representative_rgb": [
+        179,
+        207,
+        172
+      ],
+      "spread_delta_e_p90": 2.382,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 69,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        415,
+        212,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        164,
+        202,
+        162
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 70,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        434,
+        212,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        66,
+        149,
+        79
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 71,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        437,
+        212,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        97,
+        162,
+        99
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 72,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        454,
+        212,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        165,
+        200,
+        160
+      ],
+      "spread_delta_e_p90": 1.874,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 73,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        459,
+        212,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        170,
+        192,
+        161
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 74,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        483,
+        211,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        92,
+        162,
+        100
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 75,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        299,
+        213,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        254,
+        233,
+        247
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 76,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        340,
+        213,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        56,
+        143,
+        71
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 77,
+      "component_id": 1,
+      "area_px": 9,
+      "bbox_xywh": [
+        380,
+        215,
+        9,
+        1
+      ],
+      "representative_rgb": [
+        71,
+        152,
+        105
+      ],
+      "spread_delta_e_p90": 2.807,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 78,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        424,
+        215,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        138,
+        182,
+        163
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 79,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        439,
+        215,
+        1,
+        2
+      ],
+      "representative_rgb": [
+        42,
+        142,
+        72
+      ],
+      "spread_delta_e_p90": 1.025,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 80,
+      "component_id": 1,
+      "area_px": 7,
+      "bbox_xywh": [
+        303,
+        218,
+        5,
+        3
+      ],
+      "representative_rgb": [
+        56,
+        145,
+        77
+      ],
+      "spread_delta_e_p90": 55.894,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 81,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        435,
+        218,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        214,
+        231,
+        232
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 82,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        435,
+        220,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        204,
+        231,
+        220
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 83,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        439,
+        219,
+        1,
+        2
+      ],
+      "representative_rgb": [
+        43,
+        140,
+        72
+      ],
+      "spread_delta_e_p90": 1.388,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 84,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        340,
+        222,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        52,
+        142,
+        70
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 85,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        423,
+        222,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        56,
+        138,
+        66
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 86,
+      "component_id": 1,
+      "area_px": 8,
+      "bbox_xywh": [
+        434,
+        222,
+        6,
+        3
+      ],
+      "representative_rgb": [
+        94,
+        168,
+        126
+      ],
+      "spread_delta_e_p90": 43.264,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 87,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        302,
+        224,
+        1,
+        2
+      ],
+      "representative_rgb": [
+        152,
+        192,
+        162
+      ],
+      "spread_delta_e_p90": 27.027,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 88,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        307,
+        224,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        205,
+        214,
+        214
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 89,
+      "component_id": 1,
+      "area_px": 10,
+      "bbox_xywh": [
+        372,
+        224,
+        6,
+        3
+      ],
+      "representative_rgb": [
+        60,
+        146,
+        86
+      ],
+      "spread_delta_e_p90": 2.1,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 90,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        390,
+        223,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        198,
+        218,
+        220
+      ],
+      "spread_delta_e_p90": 7.075,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 91,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        398,
+        223,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        188,
+        204,
+        198
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 92,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        350,
+        226,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        117,
+        181,
+        134
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 93,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        415,
+        225,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        188,
+        208,
+        207
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 94,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        477,
+        225,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        143,
+        187,
+        169
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 95,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        482,
+        225,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        229,
+        230,
+        243
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 96,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        505,
+        243,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        217,
+        226,
+        233
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 97,
+      "component_id": 1,
+      "area_px": 12,
+      "bbox_xywh": [
+        284,
+        191,
+        3,
+        4
+      ],
+      "representative_rgb": [
+        47,
+        124,
+        75
+      ],
+      "spread_delta_e_p90": 11.603,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 98,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        356,
+        192,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        50,
+        122,
+        72
+      ],
+      "spread_delta_e_p90": 1.095,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 99,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        284,
+        210,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        103,
+        147,
+        125
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 100,
+      "component_id": 1,
+      "area_px": 4,
+      "bbox_xywh": [
+        298,
+        210,
+        4,
+        1
+      ],
+      "representative_rgb": [
+        50,
+        122,
+        74
+      ],
+      "spread_delta_e_p90": 1.889,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 101,
+      "component_id": 1,
+      "area_px": 10,
+      "bbox_xywh": [
+        315,
+        210,
+        10,
+        1
+      ],
+      "representative_rgb": [
+        50,
+        124,
+        76
+      ],
+      "spread_delta_e_p90": 2.5,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 102,
+      "component_id": 1,
+      "area_px": 13,
+      "bbox_xywh": [
+        340,
+        210,
+        13,
+        1
+      ],
+      "representative_rgb": [
+        51,
+        118,
+        77
+      ],
+      "spread_delta_e_p90": 5.659,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 103,
+      "component_id": 1,
+      "area_px": 11,
+      "bbox_xywh": [
+        361,
+        210,
+        11,
+        1
+      ],
+      "representative_rgb": [
+        50,
+        118,
+        75
+      ],
+      "spread_delta_e_p90": 3.674,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 104,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        395,
+        210,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        68,
+        147,
+        104
+      ],
+      "spread_delta_e_p90": 0.539,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 105,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        399,
+        210,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        53,
+        138,
+        90
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 106,
+      "component_id": 1,
+      "area_px": 13,
+      "bbox_xywh": [
+        412,
+        210,
+        13,
+        1
+      ],
+      "representative_rgb": [
+        50,
+        126,
+        76
+      ],
+      "spread_delta_e_p90": 2.858,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 107,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        436,
+        210,
+        2,
+        2
+      ],
+      "representative_rgb": [
+        49,
+        125,
+        74
+      ],
+      "spread_delta_e_p90": 1.295,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 108,
+      "component_id": 1,
+      "area_px": 17,
+      "bbox_xywh": [
+        449,
+        210,
+        17,
+        1
+      ],
+      "representative_rgb": [
+        50,
+        123,
+        78
+      ],
+      "spread_delta_e_p90": 2.413,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 109,
+      "component_id": 1,
+      "area_px": 6,
+      "bbox_xywh": [
+        478,
+        209,
+        6,
+        1
+      ],
+      "representative_rgb": [
+        52,
+        118,
+        76
+      ],
+      "spread_delta_e_p90": 4.262,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 110,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        460,
+        212,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        48,
+        123,
+        79
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 111,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        464,
+        212,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        46,
+        126,
+        76
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 112,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        353,
+        215,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        47,
+        125,
+        78
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 113,
+      "component_id": 1,
+      "area_px": 4,
+      "bbox_xywh": [
+        358,
+        215,
+        3,
+        2
+      ],
+      "representative_rgb": [
+        48,
+        120,
+        83
+      ],
+      "spread_delta_e_p90": 6.85,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 114,
+      "component_id": 1,
+      "area_px": 5,
+      "bbox_xywh": [
+        467,
+        216,
+        5,
+        1
+      ],
+      "representative_rgb": [
+        44,
+        123,
+        78
+      ],
+      "spread_delta_e_p90": 2.738,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 115,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        476,
+        216,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        43,
+        122,
+        73
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 116,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        303,
+        221,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        51,
+        135,
+        90
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 117,
+      "component_id": 1,
+      "area_px": 8,
+      "bbox_xywh": [
+        303,
+        223,
+        4,
+        2
+      ],
+      "representative_rgb": [
+        44,
+        122,
+        75
+      ],
+      "spread_delta_e_p90": 4.432,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 118,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        477,
+        224,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        174,
+        194,
+        203
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 119,
+      "component_id": 1,
+      "area_px": 11,
+      "bbox_xywh": [
+        497,
+        240,
+        8,
+        4
+      ],
+      "representative_rgb": [
+        45,
+        116,
+        70
+      ],
+      "spread_delta_e_p90": 3.264,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 120,
+      "component_id": 1,
+      "area_px": 11,
+      "bbox_xywh": [
+        356,
+        241,
+        8,
+        4
+      ],
+      "representative_rgb": [
+        51,
+        125,
+        82
+      ],
+      "spread_delta_e_p90": 5.65,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 121,
+      "component_id": 1,
+      "area_px": 6,
+      "bbox_xywh": [
+        308,
+        244,
+        6,
+        1
+      ],
+      "representative_rgb": [
+        51,
+        126,
+        74
+      ],
+      "spread_delta_e_p90": 1.069,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 122,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        315,
+        244,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        51,
+        126,
+        75
+      ],
+      "spread_delta_e_p90": 1.322,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 123,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        319,
+        244,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        52,
+        126,
+        77
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 124,
+      "component_id": 1,
+      "area_px": 7,
+      "bbox_xywh": [
+        321,
+        244,
+        7,
+        1
+      ],
+      "representative_rgb": [
+        53,
+        123,
+        76
+      ],
+      "spread_delta_e_p90": 2.223,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 125,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        329,
+        244,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        53,
+        124,
+        76
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 126,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        331,
+        244,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        54,
+        124,
+        76
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 127,
+      "component_id": 1,
+      "area_px": 9,
+      "bbox_xywh": [
+        333,
+        244,
+        9,
+        1
+      ],
+      "representative_rgb": [
+        52,
+        125,
+        76
+      ],
+      "spread_delta_e_p90": 1.167,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 128,
+      "component_id": 1,
+      "area_px": 5,
+      "bbox_xywh": [
+        343,
+        244,
+        5,
+        1
+      ],
+      "representative_rgb": [
+        52,
+        124,
+        78
+      ],
+      "spread_delta_e_p90": 3.29,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 129,
+      "component_id": 1,
+      "area_px": 66,
+      "bbox_xywh": [
+        373,
+        244,
+        66,
+        1
+      ],
+      "representative_rgb": [
+        50,
+        123,
+        74
+      ],
+      "spread_delta_e_p90": 2.599,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 130,
+      "component_id": 1,
+      "area_px": 5,
+      "bbox_xywh": [
+        440,
+        244,
+        5,
+        1
+      ],
+      "representative_rgb": [
+        51,
+        124,
+        73
+      ],
+      "spread_delta_e_p90": 0.986,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 131,
+      "component_id": 1,
+      "area_px": 5,
+      "bbox_xywh": [
+        475,
+        243,
+        5,
+        1
+      ],
+      "representative_rgb": [
+        51,
+        126,
+        75
+      ],
+      "spread_delta_e_p90": 0.725,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 132,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        481,
+        243,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        53,
+        124,
+        75
+      ],
+      "spread_delta_e_p90": 0.687,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 133,
+      "component_id": 1,
+      "area_px": 11,
+      "bbox_xywh": [
+        485,
+        243,
+        11,
+        1
+      ],
+      "representative_rgb": [
+        50,
+        118,
+        73
+      ],
+      "spread_delta_e_p90": 3.741,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 134,
+      "component_id": 1,
+      "area_px": 67,
+      "bbox_xywh": [
+        302,
+        212,
+        13,
+        8
+      ],
+      "representative_rgb": [
+        79,
+        194,
+        109
+      ],
+      "spread_delta_e_p90": 4.424,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 135,
+      "component_id": 1,
+      "area_px": 10,
+      "bbox_xywh": [
+        389,
+        211,
+        10,
+        1
+      ],
+      "representative_rgb": [
+        98,
+        201,
+        100
+      ],
+      "spread_delta_e_p90": 4.484,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 136,
+      "component_id": 1,
+      "area_px": 6,
+      "bbox_xywh": [
+        460,
+        211,
+        6,
+        1
+      ],
+      "representative_rgb": [
+        92,
+        188,
+        91
+      ],
+      "spread_delta_e_p90": 6.817,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 137,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        480,
+        211,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        209,
+        236,
+        188
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 138,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        372,
+        214,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        138,
+        208,
+        151
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 139,
+      "component_id": 1,
+      "area_px": 10,
+      "bbox_xywh": [
+        379,
+        216,
+        10,
+        2
+      ],
+      "representative_rgb": [
+        78,
+        183,
+        98
+      ],
+      "spread_delta_e_p90": 7.737,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 140,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        359,
+        217,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        107,
+        185,
+        93
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 141,
+      "component_id": 1,
+      "area_px": 8,
+      "bbox_xywh": [
+        466,
+        217,
+        8,
+        1
+      ],
+      "representative_rgb": [
+        115,
+        190,
+        114
+      ],
+      "spread_delta_e_p90": 16.58,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 142,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        477,
+        217,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        140,
+        199,
+        129
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 143,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        307,
+        219,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        78,
+        193,
+        113
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 144,
+      "component_id": 1,
+      "area_px": 5,
+      "bbox_xywh": [
+        435,
+        221,
+        4,
+        2
+      ],
+      "representative_rgb": [
+        184,
+        243,
+        195
+      ],
+      "spread_delta_e_p90": 22.245,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 145,
+      "component_id": 1,
+      "area_px": 3,
+      "bbox_xywh": [
+        365,
+        233,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        151,
+        218,
+        147
+      ],
+      "spread_delta_e_p90": 14.289,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 146,
+      "component_id": 1,
+      "area_px": 17,
+      "bbox_xywh": [
+        488,
+        244,
+        17,
+        1
+      ],
+      "representative_rgb": [
+        180,
+        228,
+        169
+      ],
+      "spread_delta_e_p90": 10.424,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 147,
+      "component_id": 1,
+      "area_px": 4,
+      "bbox_xywh": [
+        344,
+        245,
+        4,
+        1
+      ],
+      "representative_rgb": [
+        139,
+        207,
+        140
+      ],
+      "spread_delta_e_p90": 3.035,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 148,
+      "component_id": 1,
+      "area_px": 13,
+      "bbox_xywh": [
+        351,
+        245,
+        13,
+        1
+      ],
+      "representative_rgb": [
+        137,
+        207,
+        136
+      ],
+      "spread_delta_e_p90": 11.901,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 149,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        374,
+        245,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        98,
+        182,
+        97
+      ],
+      "spread_delta_e_p90": 1.19,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 150,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        400,
+        245,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        121,
+        196,
+        122
+      ],
+      "spread_delta_e_p90": 3.413,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 151,
+      "component_id": 1,
+      "area_px": 2,
+      "bbox_xywh": [
+        419,
+        245,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        138,
+        203,
+        137
+      ],
+      "spread_delta_e_p90": 1.611,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 152,
+      "component_id": 1,
+      "area_px": 1,
+      "bbox_xywh": [
+        422,
+        245,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        178,
+        223,
+        173
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 153,
+      "component_id": 2,
+      "area_px": 377,
+      "bbox_xywh": [
+        209,
+        206,
+        29,
+        13
+      ],
+      "representative_rgb": [
+        46,
+        126,
+        69
+      ],
+      "spread_delta_e_p90": 7.853,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 154,
+      "component_id": 3,
+      "area_px": 1194,
+      "bbox_xywh": [
+        371,
+        254,
+        52,
+        44
+      ],
+      "representative_rgb": [
+        79,
+        199,
+        116
+      ],
+      "spread_delta_e_p90": 2.748,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 155,
+      "component_id": 3,
+      "area_px": 1336,
+      "bbox_xywh": [
+        440,
+        255,
+        66,
+        21
+      ],
+      "representative_rgb": [
+        79,
+        200,
+        115
+      ],
+      "spread_delta_e_p90": 2.231,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 156,
+      "component_id": 3,
+      "area_px": 876,
+      "bbox_xywh": [
+        298,
+        275,
+        43,
+        25
+      ],
+      "representative_rgb": [
+        80,
+        200,
+        114
+      ],
+      "spread_delta_e_p90": 2.181,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 157,
+      "component_id": 3,
+      "area_px": 5,
+      "bbox_xywh": [
+        417,
+        282,
+        5,
+        1
+      ],
+      "representative_rgb": [
+        103,
+        196,
+        126
+      ],
+      "spread_delta_e_p90": 2.182,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 158,
+      "component_id": 3,
+      "area_px": 2,
+      "bbox_xywh": [
+        462,
+        282,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        98,
+        198,
+        126
+      ],
+      "spread_delta_e_p90": 1.204,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 159,
+      "component_id": 3,
+      "area_px": 16,
+      "bbox_xywh": [
+        371,
+        299,
+        11,
+        2
+      ],
+      "representative_rgb": [
+        184,
+        231,
+        178
+      ],
+      "spread_delta_e_p90": 34.512,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 160,
+      "component_id": 3,
+      "area_px": 44,
+      "bbox_xywh": [
+        462,
+        299,
+        44,
+        1
+      ],
+      "representative_rgb": [
+        108,
+        201,
+        111
+      ],
+      "spread_delta_e_p90": 7.429,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 161,
+      "component_id": 3,
+      "area_px": 3,
+      "bbox_xywh": [
+        399,
+        300,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        161,
+        220,
+        156
+      ],
+      "spread_delta_e_p90": 2.941,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 162,
+      "component_id": 3,
+      "area_px": 2,
+      "bbox_xywh": [
+        409,
+        300,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        169,
+        221,
+        168
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 163,
+      "component_id": 3,
+      "area_px": 15,
+      "bbox_xywh": [
+        420,
+        300,
+        15,
+        1
+      ],
+      "representative_rgb": [
+        178,
+        226,
+        177
+      ],
+      "spread_delta_e_p90": 1.916,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 164,
+      "component_id": 3,
+      "area_px": 3,
+      "bbox_xywh": [
+        437,
+        300,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        197,
+        234,
+        189
+      ],
+      "spread_delta_e_p90": 4.534,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 165,
+      "component_id": 3,
+      "area_px": 2885,
+      "bbox_xywh": [
+        336,
+        255,
+        104,
+        46
+      ],
+      "representative_rgb": [
+        64,
+        166,
+        95
+      ],
+      "spread_delta_e_p90": 3.306,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 166,
+      "component_id": 3,
+      "area_px": 858,
+      "bbox_xywh": [
+        462,
+        274,
+        44,
+        25
+      ],
+      "representative_rgb": [
+        65,
+        168,
+        95
+      ],
+      "spread_delta_e_p90": 2.927,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 167,
+      "component_id": 3,
+      "area_px": 1,
+      "bbox_xywh": [
+        322,
+        282,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        217,
+        230,
+        229
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 168,
+      "component_id": 4,
+      "area_px": 268,
+      "bbox_xywh": [
+        251,
+        257,
+        25,
+        15
+      ],
+      "representative_rgb": [
+        47,
+        130,
+        69
+      ],
+      "spread_delta_e_p90": 8.921,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 169,
+      "component_id": 5,
+      "area_px": 442,
+      "bbox_xywh": [
+        85,
+        261,
+        34,
+        13
+      ],
+      "representative_rgb": [
+        76,
+        186,
+        110
+      ],
+      "spread_delta_e_p90": 3.194,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 170,
+      "component_id": 6,
+      "area_px": 221,
+      "bbox_xywh": [
+        171,
+        261,
+        17,
+        13
+      ],
+      "representative_rgb": [
+        79,
+        201,
+        114
+      ],
+      "spread_delta_e_p90": 3.741,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 171,
+      "component_id": 7,
+      "area_px": 1592,
+      "bbox_xywh": [
+        208,
+        297,
+        66,
+        25
+      ],
+      "representative_rgb": [
+        46,
+        129,
+        69
+      ],
+      "spread_delta_e_p90": 2.328,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 172,
+      "component_id": 8,
+      "area_px": 1312,
+      "bbox_xywh": [
+        85,
+        299,
+        82,
+        16
+      ],
+      "representative_rgb": [
+        82,
+        201,
+        117
+      ],
+      "spread_delta_e_p90": 3.075,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 173,
+      "component_id": 9,
+      "area_px": 1680,
+      "bbox_xywh": [
+        427,
+        309,
+        80,
+        21
+      ],
+      "representative_rgb": [
+        78,
+        198,
+        113
+      ],
+      "spread_delta_e_p90": 2.12,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 174,
+      "component_id": 10,
+      "area_px": 1281,
+      "bbox_xywh": [
+        209,
+        343,
+        67,
+        21
+      ],
+      "representative_rgb": [
+        67,
+        173,
+        99
+      ],
+      "spread_delta_e_p90": 4.468,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 175,
+      "component_id": 10,
+      "area_px": 2,
+      "bbox_xywh": [
+        225,
+        369,
+        2,
+        2
+      ],
+      "representative_rgb": [
+        165,
+        204,
+        180
+      ],
+      "spread_delta_e_p90": 22.457,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 176,
+      "component_id": 10,
+      "area_px": 1,
+      "bbox_xywh": [
+        247,
+        370,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        207,
+        218,
+        227
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 177,
+      "component_id": 10,
+      "area_px": 1,
+      "bbox_xywh": [
+        258,
+        369,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        132,
+        195,
+        167
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 178,
+      "component_id": 10,
+      "area_px": 13,
+      "bbox_xywh": [
+        210,
+        390,
+        13,
+        1
+      ],
+      "representative_rgb": [
+        157,
+        217,
+        173
+      ],
+      "spread_delta_e_p90": 5.461,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 179,
+      "component_id": 10,
+      "area_px": 4,
+      "bbox_xywh": [
+        224,
+        390,
+        4,
+        1
+      ],
+      "representative_rgb": [
+        170,
+        219,
+        179
+      ],
+      "spread_delta_e_p90": 2.307,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 180,
+      "component_id": 10,
+      "area_px": 4,
+      "bbox_xywh": [
+        230,
+        390,
+        4,
+        1
+      ],
+      "representative_rgb": [
+        184,
+        224,
+        186
+      ],
+      "spread_delta_e_p90": 2.712,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 181,
+      "component_id": 10,
+      "area_px": 4,
+      "bbox_xywh": [
+        235,
+        390,
+        4,
+        1
+      ],
+      "representative_rgb": [
+        194,
+        227,
+        194
+      ],
+      "spread_delta_e_p90": 1.419,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 182,
+      "component_id": 10,
+      "area_px": 3,
+      "bbox_xywh": [
+        240,
+        390,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        197,
+        230,
+        197
+      ],
+      "spread_delta_e_p90": 0.67,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 183,
+      "component_id": 10,
+      "area_px": 3,
+      "bbox_xywh": [
+        244,
+        390,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        199,
+        231,
+        198
+      ],
+      "spread_delta_e_p90": 0.423,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 184,
+      "component_id": 10,
+      "area_px": 3,
+      "bbox_xywh": [
+        249,
+        390,
+        3,
+        1
+      ],
+      "representative_rgb": [
+        199,
+        231,
+        200
+      ],
+      "spread_delta_e_p90": 0.522,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 185,
+      "component_id": 10,
+      "area_px": 1,
+      "bbox_xywh": [
+        255,
+        390,
+        1,
+        1
+      ],
+      "representative_rgb": [
+        198,
+        231,
+        200
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 186,
+      "component_id": 10,
+      "area_px": 2,
+      "bbox_xywh": [
+        260,
+        390,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        194,
+        232,
+        198
+      ],
+      "spread_delta_e_p90": 0.515,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 187,
+      "component_id": 10,
+      "area_px": 4,
+      "bbox_xywh": [
+        263,
+        390,
+        4,
+        1
+      ],
+      "representative_rgb": [
+        194,
+        234,
+        200
+      ],
+      "spread_delta_e_p90": 1.049,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 188,
+      "component_id": 10,
+      "area_px": 2,
+      "bbox_xywh": [
+        269,
+        390,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        197,
+        236,
+        204
+      ],
+      "spread_delta_e_p90": 1.063,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 189,
+      "component_id": 10,
+      "area_px": 6,
+      "bbox_xywh": [
+        273,
+        389,
+        3,
+        2
+      ],
+      "representative_rgb": [
+        138,
+        204,
+        141
+      ],
+      "spread_delta_e_p90": 24.31,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 190,
+      "component_id": 10,
+      "area_px": 1287,
+      "bbox_xywh": [
+        209,
+        362,
+        66,
+        29
+      ],
+      "representative_rgb": [
+        51,
+        140,
+        77
+      ],
+      "spread_delta_e_p90": 2.903,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 191,
+      "component_id": 10,
+      "area_px": 2,
+      "bbox_xywh": [
+        271,
+        390,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        56,
+        150,
+        86
+      ],
+      "spread_delta_e_p90": 0.0,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 192,
+      "component_id": 10,
+      "area_px": 372,
+      "bbox_xywh": [
+        258,
+        358,
+        18,
+        31
+      ],
+      "representative_rgb": [
+        59,
+        155,
+        86
+      ],
+      "spread_delta_e_p90": 1.962,
+      "review_required": true,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 193,
+      "component_id": 10,
+      "area_px": 2,
+      "bbox_xywh": [
+        213,
+        362,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        55,
+        154,
+        84
+      ],
+      "spread_delta_e_p90": 0.21,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 194,
+      "component_id": 10,
+      "area_px": 4,
+      "bbox_xywh": [
+        220,
+        362,
+        4,
+        1
+      ],
+      "representative_rgb": [
+        60,
+        154,
+        82
+      ],
+      "spread_delta_e_p90": 2.407,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 195,
+      "component_id": 10,
+      "area_px": 2,
+      "bbox_xywh": [
+        258,
+        361,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        64,
+        162,
+        100
+      ],
+      "spread_delta_e_p90": 1.197,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 196,
+      "component_id": 10,
+      "area_px": 11,
+      "bbox_xywh": [
+        267,
+        388,
+        6,
+        2
+      ],
+      "representative_rgb": [
+        55,
+        153,
+        83
+      ],
+      "spread_delta_e_p90": 4.971,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 197,
+      "component_id": 10,
+      "area_px": 2,
+      "bbox_xywh": [
+        264,
+        389,
+        2,
+        1
+      ],
+      "representative_rgb": [
+        62,
+        159,
+        82
+      ],
+      "spread_delta_e_p90": 1.195,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    },
+    {
+      "id": 198,
+      "component_id": 11,
+      "area_px": 1749,
+      "bbox_xywh": [
+        210,
+        399,
+        66,
+        27
+      ],
+      "representative_rgb": [
+        46,
+        129,
+        69
+      ],
+      "spread_delta_e_p90": 3.089,
+      "review_required": false,
+      "palette_name": null,
+      "height_m": null,
+      "palette_distance": null
+    }
+  ],
+  "source": {
+    "filename": "364bd34335b2319101f7d3db75dfbdb0.png",
+    "sha256": "9ea0ca15a601ed6382c6e1abf4cf2dbac539dd38c1179cb725c9f672802885a5"
+  },
+  "fields_sha256": "6e00f62d7a2e844cff0ba4f2943788072e0ceef95894280be172ca3ca72d7073",
+  "files": [
+    "original.png",
+    "cleaned.png",
+    "foreground_mask.png",
+    "regions.png",
+    "fields.npz",
+    "review_mask.png",
+    "change_mask.png",
+    "geometry_review_mask.png",
+    "geometry_added_mask.png",
+    "geometry_removed_mask.png",
+    "comparison.png",
+    "report.json",
+    "source.png"
+  ]
+}

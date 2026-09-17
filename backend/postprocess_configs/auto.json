@@ -1,0 +1,18 @@
+{
+  "mode": "auto",
+  "background_rgb": null,
+  "background_delta": 10.0,
+  "color_delta": 5.0,
+  "repair_geometry": true,
+  "clean_colors": true,
+  "defect_radius": 1,
+  "max_hole_area": 4,
+  "max_geometry_change_ratio": 0.025,
+  "geometry_mode": "regularize",
+  "boundary_tolerance_ratio": 0.24,
+  "regularization_max_change_ratio": 0.20,
+  "remove_fragments": true,
+  "fragment_area_ratio": 0.025,
+  "regularize_color_boundaries": true,
+  "max_noise_region_area": 2
+}

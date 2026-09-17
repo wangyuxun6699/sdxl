@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from backend.app.database import init_db
 from backend.app.routes import router
+from backend.app.workbench_routes import workbench_router
+from backend.app.jobs import JobManager
 from backend.app.settings import ANALYSIS_DIR, IMAGES_DIR, OUTPUTS_DIR
 
 
@@ -13,7 +17,13 @@ def create_app() -> FastAPI:
     """装配 API，并在挂载静态目录前完成数据库与运行目录初始化。"""
     init_db()
 
-    app = FastAPI(title="Urban Planner Assistant API")
+    @asynccontextmanager
+    async def lifespan(app):
+        app.state.jobs = JobManager()
+        yield
+        app.state.jobs.close()
+
+    app = FastAPI(title="Urban Diffusion API", version="3.0.0", lifespan=lifespan)
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
@@ -22,6 +32,7 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
     app.include_router(router)
+    app.include_router(workbench_router)
     # 生成图片、3D HTML 和分析热力图通过独立静态路由返回给前端。
     app.mount("/images", StaticFiles(directory=IMAGES_DIR), name="images")
     app.mount("/outputs", StaticFiles(directory=OUTPUTS_DIR), name="outputs")

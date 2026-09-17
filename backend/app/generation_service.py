@@ -9,6 +9,7 @@ from typing import Any
 
 from .constants import BUILDING_COLOR_BY_AREA, DEFAULT_PALETTES
 from .logger import log_step
+from .postprocess_service import postprocess_generated_image
 from .settings import IMAGES_DIR, OUTPUTS_DIR, SCRIPTS_DIR, is_test_mode
 
 
@@ -39,6 +40,9 @@ def generate_assets(request_id: str, generation_payload: dict[str, Any]) -> tupl
         # SDXL 放在子进程执行：失败时能完整捕获日志，结束后操作系统也会回收模型显存。
         _run_subprocess("llmpicture.py", [sys.executable, llm_script, payload_text, image_path])
 
+    # Postprocess is a CPU-only module shared with the standalone image CLI.
+    # The original bytes, masks, regions and unknown heights are kept in a sidecar bundle.
+    postprocess_generated_image(image_path)
     _run_subprocess("2D23D.py", [sys.executable, convert_script, image_path, html_path, target_color])
 
     return image_path, html_path
@@ -101,6 +105,7 @@ def _run_subprocess(script_name: str, command: list[str]) -> None:
         encoding="utf-8",
         errors="replace",
         env=child_env,
+        timeout=1800,
     )
     _relay_output(script_name, result.stdout, result.stderr)
     if result.returncode != 0:

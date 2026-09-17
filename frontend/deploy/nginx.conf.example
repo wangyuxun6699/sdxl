@@ -1,0 +1,17 @@
+# Merge into your existing server block; adjust root and upstream.
+# Existing authentication/TLS configuration remains managed by your deployment.
+server {
+    listen 80;
+    server_name localhost;
+    root /srv/urban-diffusion/frontend/dist;
+    client_max_body_size 16m;
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000/;
+        proxy_set_header Host $host;
+        proxy_read_timeout 240s;
+        proxy_send_timeout 60s;
+    }
+    location /cesium/ { try_files $uri =404; }
+    location /assets/ { try_files $uri =404; }
+    location / { try_files $uri $uri/ /index.html; }
+}

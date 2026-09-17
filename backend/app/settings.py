@@ -24,10 +24,12 @@ def _load_env_file(path: Path) -> None:
 
 _load_env_file(PROJECT_DIR / ".env")
 
-DB_PATH = BACKEND_DIR / "database.db"
-IMAGES_DIR = BACKEND_DIR / "images"
-OUTPUTS_DIR = BACKEND_DIR / "outputs"
-ANALYSIS_DIR = BACKEND_DIR / "analysis"
+DATA_DIR = Path(os.getenv("CITY_PLANNER_DATA_DIR", str(BACKEND_DIR))).resolve()
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+DB_PATH = DATA_DIR / "database.db"
+IMAGES_DIR = DATA_DIR / "images"
+OUTPUTS_DIR = DATA_DIR / "outputs"
+ANALYSIS_DIR = DATA_DIR / "analysis"
 SCRIPTS_DIR = BACKEND_DIR / "scripts"
 
 DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY", "").strip().strip('"')

@@ -1,0 +1,5 @@
+# Minimal offline image test dependencies (Python 3.10+).
+# Existing backend environments already have these; no SDXL/LLM/GPU packages needed.
+numpy>=1.26,<3
+opencv-python>=4.9,<5
+pillow>=10,<13

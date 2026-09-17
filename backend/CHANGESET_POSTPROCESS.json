@@ -1,0 +1,72 @@
+{
+  "pipeline_version": "2.0.0",
+  "verified_v1_archive_sha256": "025b76f0da58d844d4aeccc135d4b30a2295360327b21305e07f5396d9334cc5",
+  "input_archive_sha256": "01ae01a3251e8a3ca2b1d338c906be967256b83abd62004c77514a7b4e2e2ae8",
+  "changed_relative_to_v1": [
+    "CHANGESET_POSTPROCESS.json",
+    "README_POSTPROCESS.md",
+    "VALIDATION_POSTPROCESS.md",
+    "postprocess_configs/auto.json",
+    "postprocessing/config.py",
+    "postprocessing/files.py",
+    "postprocessing/geometry.py",
+    "postprocessing/pipeline.py",
+    "postprocessing/regions.py",
+    "scripts/postprocess_image.py"
+  ],
+  "new_source_and_documentation": [
+    "RELEASE_MANIFEST.json",
+    "RESEARCH_NOTES_V2.md",
+    "postprocessing/regularization.py",
+    "scripts/validate_postprocess_v2.py",
+    "tests/test_regularization_v2.py"
+  ],
+  "unchanged_relative_to_v1": [
+    "CHANGESET_POSTPROCESS.json",
+    "__init__.py",
+    "app/__init__.py",
+    "app/analysis_service.py",
+    "app/constants.py",
+    "app/database.py",
+    "app/generation_service.py",
+    "app/llm_router.py",
+    "app/logger.py",
+    "app/postprocess_service.py",
+    "app/prompt_tools.py",
+    "app/repository.py",
+    "app/routes.py",
+    "app/schemas.py",
+    "app/serializers.py",
+    "app/settings.py",
+    "main.py",
+    "postprocess_configs/palette.example.json",
+    "postprocess_configs/residential_reference.json",
+    "postprocessing/__init__.py",
+    "postprocessing/scene.py",
+    "requirements-postprocess.txt",
+    "requirements.txt",
+    "scripts/2D23D.py",
+    "scripts/__init__.py",
+    "scripts/llm_handler.py",
+    "scripts/llmpicture.py",
+    "scripts/spatial_analysis.py",
+    "tests/test_postprocessing.py"
+  ],
+  "inherited_integration_files_unchanged": [
+    "app/analysis_service.py",
+    "app/generation_service.py",
+    "app/routes.py",
+    "app/serializers.py",
+    "scripts/2D23D.py",
+    "scripts/spatial_analysis.py"
+  ],
+  "new_assets": [
+    "test_images_v2/",
+    "validation_v2/"
+  ],
+  "omitted_generated_content": [
+    "v1 validation_examples (retained in the recovered v1 archive)",
+    "Python caches"
+  ],
+  "note": "Actual v1 cleaned outputs and their reports are included under validation_v2/baseline_v1; current v2 outputs are independently rerun."
+}

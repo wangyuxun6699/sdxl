@@ -1,12 +1,13 @@
 {
-  "name": "map-frontend",
+  "name": "urban-diffusion-frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "12.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:intro": "node --test tests/cityGeometry.test.js"
   },
   "dependencies": {
     "cesium": "^1.141.0",

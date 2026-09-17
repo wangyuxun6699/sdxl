@@ -1,0 +1,34 @@
+{
+  "pipeline_version": "1.0.0",
+  "source": {
+    "filename": "report_buildings_crop.png",
+    "sha256": "799ae8ac75d486ff29f84d6423320532a7880b79aa34337d7eb499020641278d"
+  },
+  "size": {
+    "width": 705,
+    "height": 326
+  },
+  "counts": {
+    "components_before": 23,
+    "components_after": 23,
+    "color_regions": 305,
+    "noise_regions_merged": 6,
+    "geometry_changed_px": 58,
+    "changed_px": 213024,
+    "geometry_added_px": 11,
+    "geometry_removed_px": 47,
+    "changed_foreground_px": 6346,
+    "changed_background_px": 206678,
+    "review_px": 16565,
+    "foreground_px": 23105,
+    "known_height_px": 0
+  },
+  "elapsed_seconds": 0.1447,
+  "warnings": [
+    "Color regions are not building instances or ordered height classes.",
+    "Stable false color splits cannot be distinguished from true height parts using RGB alone.",
+    "Uncertain region colors were preserved; inspect review_mask.png.",
+    "Unknown heights are NaN, not zero; no meters are inferred from brightness."
+  ],
+  "height_source": "unknown"
+}

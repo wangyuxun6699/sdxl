@@ -1,0 +1,184 @@
+{
+  "cases": [
+    {
+      "image": "report_buildings_crop.png",
+      "pipeline_version": "1.0.0",
+      "source": {
+        "filename": "report_buildings_crop.png",
+        "sha256": "799ae8ac75d486ff29f84d6423320532a7880b79aa34337d7eb499020641278d"
+      },
+      "size": {
+        "width": 705,
+        "height": 326
+      },
+      "counts": {
+        "components_before": 23,
+        "components_after": 23,
+        "color_regions": 305,
+        "noise_regions_merged": 6,
+        "geometry_changed_px": 58,
+        "changed_px": 213024,
+        "geometry_added_px": 11,
+        "geometry_removed_px": 47,
+        "changed_foreground_px": 6346,
+        "changed_background_px": 206678,
+        "review_px": 16565,
+        "foreground_px": 23105,
+        "known_height_px": 0
+      },
+      "elapsed_seconds": 0.1447,
+      "warnings": [
+        "Color regions are not building instances or ordered height classes.",
+        "Stable false color splits cannot be distinguished from true height parts using RGB alone.",
+        "Uncertain region colors were preserved; inspect review_mask.png.",
+        "Unknown heights are NaN, not zero; no meters are inferred from brightness."
+      ],
+      "height_source": "unknown"
+    },
+    {
+      "image": "report_notches_crop.png",
+      "pipeline_version": "1.0.0",
+      "source": {
+        "filename": "report_notches_crop.png",
+        "sha256": "c461ab35aef7bea90ee2fc705b812eb070de71b2fb30d80e6cdc8cb71ef50fb7"
+      },
+      "size": {
+        "width": 320,
+        "height": 295
+      },
+      "counts": {
+        "components_before": 4,
+        "components_after": 4,
+        "color_regions": 241,
+        "noise_regions_merged": 2,
+        "geometry_changed_px": 73,
+        "changed_px": 20317,
+        "geometry_added_px": 47,
+        "geometry_removed_px": 26,
+        "changed_foreground_px": 1930,
+        "changed_background_px": 18387,
+        "review_px": 17185,
+        "foreground_px": 19310,
+        "known_height_px": 0
+      },
+      "elapsed_seconds": 0.0922,
+      "warnings": [
+        "Color regions are not building instances or ordered height classes.",
+        "Stable false color splits cannot be distinguished from true height parts using RGB alone.",
+        "Uncertain region colors were preserved; inspect review_mask.png.",
+        "Unknown heights are NaN, not zero; no meters are inferred from brightness."
+      ],
+      "height_source": "unknown"
+    },
+    {
+      "image": "sample_detail.jpg",
+      "pipeline_version": "1.0.0",
+      "source": {
+        "filename": "sample_detail.jpg",
+        "sha256": "2918257b2d93f7ce682901dec1a5050d7de5cfb054d682bccde052fec7024ef0"
+      },
+      "size": {
+        "width": 1439,
+        "height": 784
+      },
+      "counts": {
+        "components_before": 24,
+        "components_after": 24,
+        "color_regions": 211,
+        "noise_regions_merged": 20,
+        "geometry_changed_px": 438,
+        "changed_px": 205005,
+        "geometry_added_px": 354,
+        "geometry_removed_px": 84,
+        "changed_foreground_px": 94337,
+        "changed_background_px": 110668,
+        "review_px": 43423,
+        "foreground_px": 212442,
+        "known_height_px": 0
+      },
+      "elapsed_seconds": 0.4229,
+      "warnings": [
+        "Color regions are not building instances or ordered height classes.",
+        "Stable false color splits cannot be distinguished from true height parts using RGB alone.",
+        "Uncertain region colors were preserved; inspect review_mask.png.",
+        "Unknown heights are NaN, not zero; no meters are inferred from brightness."
+      ],
+      "height_source": "unknown"
+    },
+    {
+      "image": "sample_layouts.png",
+      "pipeline_version": "1.0.0",
+      "source": {
+        "filename": "sample_layouts.png",
+        "sha256": "636c80ab794acdff96e848b0bf9f0af0a49f9a82f61b148ade8e5f001133ef09"
+      },
+      "size": {
+        "width": 1009,
+        "height": 912
+      },
+      "counts": {
+        "components_before": 136,
+        "components_after": 136,
+        "color_regions": 915,
+        "noise_regions_merged": 13,
+        "geometry_changed_px": 387,
+        "changed_px": 398601,
+        "geometry_added_px": 216,
+        "geometry_removed_px": 171,
+        "changed_foreground_px": 33292,
+        "changed_background_px": 365309,
+        "review_px": 26991,
+        "foreground_px": 65167,
+        "known_height_px": 0
+      },
+      "elapsed_seconds": 0.3701,
+      "warnings": [
+        "Color regions are not building instances or ordered height classes.",
+        "Stable false color splits cannot be distinguished from true height parts using RGB alone.",
+        "Uncertain region colors were preserved; inspect review_mask.png.",
+        "Unknown heights are NaN, not zero; no meters are inferred from brightness."
+      ],
+      "height_source": "unknown"
+    },
+    {
+      "image": "synthetic_defects.png",
+      "pipeline_version": "1.0.0",
+      "source": {
+        "filename": "synthetic_defects.png",
+        "sha256": "428db48af10560a8d3eff41cabd2ecb0224b7099e6c8238e4c1b692dfe6f0fca"
+      },
+      "size": {
+        "width": 1024,
+        "height": 1024
+      },
+      "counts": {
+        "components_before": 7,
+        "components_after": 7,
+        "color_regions": 9,
+        "noise_regions_merged": 0,
+        "geometry_changed_px": 3,
+        "changed_px": 59576,
+        "geometry_added_px": 2,
+        "geometry_removed_px": 1,
+        "changed_foreground_px": 59576,
+        "changed_background_px": 0,
+        "review_px": 0,
+        "foreground_px": 258830,
+        "known_height_px": 0
+      },
+      "elapsed_seconds": 0.19,
+      "warnings": [
+        "Color regions are not building instances or ordered height classes.",
+        "Stable false color splits cannot be distinguished from true height parts using RGB alone.",
+        "Unknown heights are NaN, not zero; no meters are inferred from brightness."
+      ],
+      "height_source": "unknown"
+    }
+  ],
+  "synthetic": {
+    "noise_patch_mae_before_rgb_0_255": 1.635699987411499,
+    "noise_patch_mae_after_rgb_0_255": 0.6666666865348816,
+    "foreground_iou_against_constructed_reference": 1.0,
+    "scope": "Only the explicitly synthetic fixture, not SDXL model accuracy."
+  }
+}
